@@ -3,6 +3,7 @@
 
 namespace ui
 {
+	static const int IDC_TEST_BTN = 100;
 
 	MainWindow::MainWindow(std::string title, HINSTANCE hinst) : hinst_(hinst), title_(ConvertToTString(title))
 	{
@@ -23,7 +24,7 @@ namespace ui
 		ZeroMemory(&wcex_, sizeof(wcex_));
 		wcex_.cbSize = sizeof(wcex_);	// WNDCLASSEX size in bytes
 		wcex_.style = CS_HREDRAW | CS_VREDRAW;		// Window class styles
-		wcex_.lpszClassName = TEXT("CPASSWORDGENERATOR");	// Window class name
+		wcex_.lpszClassName = (title_ + tstring(TEXT("_window"))).c_str();	// Window class name
 		wcex_.hbrBackground = (HBRUSH)(COLOR_WINDOW + 2);	// Window background brush color.
 		wcex_.hCursor = LoadCursor(hinst, IDC_ARROW); // Window cursor
 		wcex_.lpfnWndProc = WndProc;
@@ -45,7 +46,7 @@ namespace ui
 		cs_.y = pos_y;	// Window Y position
 		cs_.cx = window_width;	// Window width
 		cs_.cy = window_height;	// Window height
-		cs_.hInstance = hinst; // Window instance.
+		cs_.hInstance = hinst_; // Window instance.
 		cs_.lpszClass = wcex_.lpszClassName;		// Window class name
 		cs_.lpszName = title_.c_str();	// Window title
 		cs_.style = WS_OVERLAPPED | WS_SYSMENU;		// Window style
@@ -110,6 +111,35 @@ namespace ui
 	{
 		switch (uMsg)
 		{
+		case WM_CREATE:
+		{
+			HDC hdc = GetDC(hWnd);
+			auto btn_font = CreateFontUtil(hdc, 14, TEXT("Px437 IBM PS/2thin3"), FW_DONTCARE, false, false, false, 255);
+			ReleaseDC(hWnd, hdc);
+			int btn_width = 90;
+			int btn_height = 36;
+			int window_width = 280;
+			int window_height = 240;
+			hwnd_btn_ = CreateWindow(
+				TEXT("BUTTON"), // predefined class name
+				TEXT("TEST"), // button text 
+				WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON | BS_FLAT | BS_CENTER,  // Styles 
+				((window_width / 2) - (btn_width / 2)), // x position 
+				((window_height / 2) + (btn_height / 2)), // y position 
+				btn_width, // width
+				btn_height, // height
+				hWnd, // parent handle
+				(HMENU)IDC_TEST_BTN,
+				(HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), // module instance
+				NULL); // lparam, pointer not needed
+
+			if (!hwnd_btn_)
+			{
+				UnregisterClass(title_.c_str(), hinst_);
+				throw std::runtime_error("could not create window ui element");
+			}
+		}
+
 		default:
 			return DefWindowProc(hWnd, uMsg, wParam, lParam);
 		}

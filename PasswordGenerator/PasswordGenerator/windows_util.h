@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#pragma warning(disable : 4996)
 // Header needed for unicode adjustment support
 #include <codecvt>
 
@@ -43,6 +44,13 @@ std::string ConvertToTString(const tstring& src)
 //==================================================
 // conveniance functions
 //==================================================
+inline HFONT CreateFontUtil(HDC hdc, int point_size, tstring font, int font_weight, bool italic, bool underline, bool strikeout, int char_set)
+{
+	int lf_height = -MulDiv(point_size, GetDeviceCaps(hdc, LOGPIXELSY), 72);
+
+	HFONT hf = CreateFont(lf_height, 0, 0, 0, font_weight, italic, underline, strikeout, char_set, 0, 0, 0, 0, font.c_str());
+	return hf;
+}
 
 
 //==================================================

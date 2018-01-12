@@ -1,346 +1,346 @@
-[1970-01-10 02:08:48.995544][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: Terminal - RASTER - 255
-[1970-01-10 02:08:48.995621][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: System - RASTER - 0
-[1970-01-10 02:08:48.995693][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: Fixedsys - RASTER - 0
-[1970-01-10 02:08:48.995763][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Modern - VECTOR - 255
-[1970-01-10 02:08:48.995839][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Roman - VECTOR - 255
-[1970-01-10 02:08:48.995934][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Script - VECTOR - 255
-[1970-01-10 02:08:48.996047][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: Courier - RASTER - 0
-[1970-01-10 02:08:48.996150][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: MS Serif - RASTER - 0
-[1970-01-10 02:08:48.996260][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: MS Sans Serif - RASTER - 0
-[1970-01-10 02:08:48.996374][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:335] Font Name: Small Fonts - RASTER - 0
-[1970-01-10 02:08:48.996485][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Adobe Caslon Pro Bold - VECTOR - 0
-[1970-01-10 02:08:48.996595][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Adobe Caslon Pro - VECTOR - 0
-[1970-01-10 02:08:48.996702][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Adobe Garamond Pro Bold - VECTOR - 0
-[1970-01-10 02:08:48.996813][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Adobe Garamond Pro - VECTOR - 0
-[1970-01-10 02:08:48.996908][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro - VECTOR - 0
-[1970-01-10 02:08:48.997017][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Caption - VECTOR - 0
-[1970-01-10 02:08:48.997148][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Display - VECTOR - 0
-[1970-01-10 02:08:48.997286][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro SmText - VECTOR - 0
-[1970-01-10 02:08:48.997400][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Subhead - VECTOR - 0
-[1970-01-10 02:08:48.997536][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Light Display - VECTOR - 0
-[1970-01-10 02:08:48.997629][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Smbd - VECTOR - 0
-[1970-01-10 02:08:48.997727][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Smbd Caption - VECTOR - 0
-[1970-01-10 02:08:48.997864][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Smbd Display - VECTOR - 0
-[1970-01-10 02:08:48.998015][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Smbd SmText - VECTOR - 0
-[1970-01-10 02:08:48.998129][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Arno Pro Smbd Subhead - VECTOR - 0
-[1970-01-10 02:08:48.998237][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Bell Gothic Std Black - VECTOR - 0
-[1970-01-10 02:08:48.998345][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Bell Gothic Std Light - VECTOR - 0
-[1970-01-10 02:08:48.998462][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Bickham Script Pro Regular - VECTOR - 0
-[1970-01-10 02:08:48.998554][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Bickham Script Pro Semibold - VECTOR - 0
-[1970-01-10 02:08:48.998644][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Birch Std - VECTOR - 0
-[1970-01-10 02:08:48.998733][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Blackoak Std - VECTOR - 0
-[1970-01-10 02:08:48.998833][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Brush Script Std - VECTOR - 0
-[1970-01-10 02:08:48.998926][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Chaparral Pro - VECTOR - 0
-[1970-01-10 02:08:48.999020][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Charlemagne Std - VECTOR - 0
-[1970-01-10 02:08:48.999119][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Cooper Std Black - VECTOR - 0
-[1970-01-10 02:08:48.999220][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Eccentric Std - VECTOR - 0
-[1970-01-10 02:08:48.999320][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Garamond Premr Pro - VECTOR - 0
-[1970-01-10 02:08:48.999422][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Garamond Premr Pro Smbd - VECTOR - 0
-[1970-01-10 02:08:48.999522][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Giddyup Std - VECTOR - 0
-[1970-01-10 02:08:48.999626][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Hobo Std - VECTOR - 0
-[1970-01-10 02:08:48.999743][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro B - VECTOR - 128
-[1970-01-10 02:08:48.999862][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro B - VECTOR - 128
-[1970-01-10 02:08:48.999983][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro EL - VECTOR - 128
-[1970-01-10 02:08:49.000102][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro EL - VECTOR - 128
-[1970-01-10 02:08:49.000214][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro H - VECTOR - 128
-[1970-01-10 02:08:49.000325][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro H - VECTOR - 128
-[1970-01-10 02:08:49.000435][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro L - VECTOR - 128
-[1970-01-10 02:08:49.000550][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro L - VECTOR - 128
-[1970-01-10 02:08:49.000665][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro M - VECTOR - 128
-[1970-01-10 02:08:49.000781][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro M - VECTOR - 128
-[1970-01-10 02:08:49.000896][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Gothic Pro R - VECTOR - 128
-[1970-01-10 02:08:49.001014][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Gothic Pro R - VECTOR - 128
-[1970-01-10 02:08:49.001129][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro B - VECTOR - 128
-[1970-01-10 02:08:49.001234][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro B - VECTOR - 128
-[1970-01-10 02:08:49.001335][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro EL - VECTOR - 128
-[1970-01-10 02:08:49.001431][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro EL - VECTOR - 128
-[1970-01-10 02:08:49.001536][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro H - VECTOR - 128
-[1970-01-10 02:08:49.001634][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro H - VECTOR - 128
-[1970-01-10 02:08:49.001730][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro L - VECTOR - 128
-[1970-01-10 02:08:49.001831][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro L - VECTOR - 128
-[1970-01-10 02:08:49.001929][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro M - VECTOR - 128
-[1970-01-10 02:08:49.002032][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro M - VECTOR - 128
-[1970-01-10 02:08:49.002131][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Kozuka Mincho Pro R - VECTOR - 128
-[1970-01-10 02:08:49.002368][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: @Kozuka Mincho Pro R - VECTOR - 128
-[1970-01-10 02:08:49.002480][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Letter Gothic Std - VECTOR - 0
-[1970-01-10 02:08:49.002610][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Lithos Pro Regular - VECTOR - 0
-[1970-01-10 02:08:49.002710][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Mesquite Std - VECTOR - 0
-[1970-01-10 02:08:49.002815][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Minion Pro - VECTOR - 0
-[1970-01-10 02:08:49.002911][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Minion Pro Cond - VECTOR - 0
-[1970-01-10 02:08:49.003018][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Minion Pro Med - VECTOR - 0
-[1970-01-10 02:08:49.003118][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Minion Pro SmBd - VECTOR - 0
-[1970-01-10 02:08:49.003228][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Myriad Pro - VECTOR - 0
-[1970-01-10 02:08:49.003333][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Myriad Pro Cond - VECTOR - 0
-[1970-01-10 02:08:49.003438][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Myriad Pro Light - VECTOR - 0
-[1970-01-10 02:08:49.003566][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Nueva Std Cond - VECTOR - 0
-[1970-01-10 02:08:49.003713][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: OCR A Std - VECTOR - 0
-[1970-01-10 02:08:49.003822][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Orator Std - VECTOR - 0
-[1970-01-10 02:08:49.003934][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Poplar Std - VECTOR - 0
-[1970-01-10 02:08:49.004046][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Prestige Elite Std - VECTOR - 0
-[1970-01-10 02:08:49.004156][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Rosewood Std Regular - VECTOR - 0
-[1970-01-10 02:08:49.004270][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Stencil Std - VECTOR - 0
-[1970-01-10 02:08:49.004391][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Tekton Pro - VECTOR - 0
-[1970-01-10 02:08:49.004511][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Tekton Pro Cond - VECTOR - 0
-[1970-01-10 02:08:49.004634][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Tekton Pro Ext - VECTOR - 0
-[1970-01-10 02:08:49.004754][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:339] Font Name: Trajan Pro - VECTOR - 0
-[1970-01-10 02:08:49.004866][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Marlett - TRUETYPE - 2
-[1970-01-10 02:08:49.004986][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial - TRUETYPE - 0
-[1970-01-10 02:08:49.005111][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arabic Transparent - TRUETYPE - 0
-[1970-01-10 02:08:49.005232][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial Baltic - TRUETYPE - 186
-[1970-01-10 02:08:49.005354][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial CE - TRUETYPE - 238
-[1970-01-10 02:08:49.005475][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial CYR - TRUETYPE - 204
-[1970-01-10 02:08:49.005578][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial Greek - TRUETYPE - 161
-[1970-01-10 02:08:49.005682][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial TUR - TRUETYPE - 162
-[1970-01-10 02:08:49.005796][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial Black - TRUETYPE - 0
-[1970-01-10 02:08:49.005908][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Calibri - TRUETYPE - 0
-[1970-01-10 02:08:49.006022][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Calibri Light - TRUETYPE - 0
-[1970-01-10 02:08:49.006147][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Cambria - TRUETYPE - 0
-[1970-01-10 02:08:49.006265][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Cambria Math - TRUETYPE - 0
-[1970-01-10 02:08:49.006396][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Candara - TRUETYPE - 0
-[1970-01-10 02:08:49.006495][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Comic Sans MS - TRUETYPE - 0
-[1970-01-10 02:08:49.006595][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Consolas - TRUETYPE - 0
-[1970-01-10 02:08:49.006697][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Constantia - TRUETYPE - 0
-[1970-01-10 02:08:49.006796][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Corbel - TRUETYPE - 0
-[1970-01-10 02:08:49.006897][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New - TRUETYPE - 0
-[1970-01-10 02:08:49.006999][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New Baltic - TRUETYPE - 186
-[1970-01-10 02:08:49.007111][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New CE - TRUETYPE - 238
-[1970-01-10 02:08:49.007213][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New CYR - TRUETYPE - 204
-[1970-01-10 02:08:49.007319][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New Greek - TRUETYPE - 161
-[1970-01-10 02:08:49.007426][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Courier New TUR - TRUETYPE - 162
-[1970-01-10 02:08:49.007530][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Ebrima - TRUETYPE - 0
-[1970-01-10 02:08:49.007634][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Medium - TRUETYPE - 0
-[1970-01-10 02:08:49.007734][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gabriola - TRUETYPE - 0
-[1970-01-10 02:08:49.007840][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gadugi - TRUETYPE - 0
-[1970-01-10 02:08:49.007937][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Georgia - TRUETYPE - 0
-[1970-01-10 02:08:49.008052][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Impact - TRUETYPE - 0
-[1970-01-10 02:08:49.008146][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Javanese Text - TRUETYPE - 0
-[1970-01-10 02:08:49.008246][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Leelawadee UI - TRUETYPE - 0
-[1970-01-10 02:08:49.008343][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Leelawadee UI Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.008445][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Console - TRUETYPE - 0
-[1970-01-10 02:08:49.008546][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Sans Unicode - TRUETYPE - 0
-[1970-01-10 02:08:49.008645][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Malgun Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.008743][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Malgun Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.008844][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Malgun Gothic Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.008943][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Malgun Gothic Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.009051][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft Himalaya - TRUETYPE - 0
-[1970-01-10 02:08:49.009162][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft JhengHei - TRUETYPE - 0
-[1970-01-10 02:08:49.009261][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft JhengHei - TRUETYPE - 0
-[1970-01-10 02:08:49.009363][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft JhengHei UI - TRUETYPE - 0
-[1970-01-10 02:08:49.009477][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft JhengHei UI - TRUETYPE - 0
-[1970-01-10 02:08:49.009584][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft JhengHei Light - TRUETYPE - 0
-[1970-01-10 02:08:49.009691][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft JhengHei Light - TRUETYPE - 0
-[1970-01-10 02:08:49.009798][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft JhengHei UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.009905][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft JhengHei UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.010031][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft New Tai Lue - TRUETYPE - 0
-[1970-01-10 02:08:49.010144][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft PhagsPa - TRUETYPE - 0
-[1970-01-10 02:08:49.010228][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft Sans Serif - TRUETYPE - 0
-[1970-01-10 02:08:49.010311][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft Tai Le - TRUETYPE - 0
-[1970-01-10 02:08:49.010394][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft YaHei - TRUETYPE - 0
-[1970-01-10 02:08:49.010484][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft YaHei - TRUETYPE - 0
-[1970-01-10 02:08:49.010569][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft YaHei UI - TRUETYPE - 0
-[1970-01-10 02:08:49.010655][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft YaHei UI - TRUETYPE - 0
-[1970-01-10 02:08:49.010744][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft YaHei Light - TRUETYPE - 0
-[1970-01-10 02:08:49.010830][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft YaHei Light - TRUETYPE - 0
-[1970-01-10 02:08:49.010914][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft YaHei UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.011015][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Microsoft YaHei UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.011103][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft Yi Baiti - TRUETYPE - 0
-[1970-01-10 02:08:49.011193][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MingLiU-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011282][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @MingLiU-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011525][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: PMingLiU-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011673][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @PMingLiU-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011779][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MingLiU_HKSCS-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011883][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @MingLiU_HKSCS-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.011983][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Mongolian Baiti - TRUETYPE - 0
-[1970-01-10 02:08:49.012090][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MV Boli - TRUETYPE - 0
-[1970-01-10 02:08:49.012193][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Myanmar Text - TRUETYPE - 0
-[1970-01-10 02:08:49.012292][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Nirmala UI - TRUETYPE - 0
-[1970-01-10 02:08:49.012388][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Nirmala UI Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.012478][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Palatino Linotype - TRUETYPE - 0
-[1970-01-10 02:08:49.012579][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe MDL2 Assets - TRUETYPE - 0
-[1970-01-10 02:08:49.012677][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe Print - TRUETYPE - 0
-[1970-01-10 02:08:49.012781][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe Script - TRUETYPE - 0
-[1970-01-10 02:08:49.012886][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI - TRUETYPE - 0
-[1970-01-10 02:08:49.012991][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Black - TRUETYPE - 0
-[1970-01-10 02:08:49.013097][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Emoji - TRUETYPE - 0
-[1970-01-10 02:08:49.013201][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Historic - TRUETYPE - 0
-[1970-01-10 02:08:49.013303][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.013402][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Semibold - TRUETYPE - 0
-[1970-01-10 02:08:49.013497][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.013603][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Segoe UI Symbol - TRUETYPE - 0
-[1970-01-10 02:08:49.013706][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: SimSun - TRUETYPE - 0
-[1970-01-10 02:08:49.013807][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @SimSun - TRUETYPE - 0
-[1970-01-10 02:08:49.013911][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: NSimSun - TRUETYPE - 0
-[1970-01-10 02:08:49.014015][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @NSimSun - TRUETYPE - 0
-[1970-01-10 02:08:49.014118][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: SimSun-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.014218][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @SimSun-ExtB - TRUETYPE - 0
-[1970-01-10 02:08:49.014310][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Small - TRUETYPE - 0
-[1970-01-10 02:08:49.014408][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Text - TRUETYPE - 0
-[1970-01-10 02:08:49.014509][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Subheading - TRUETYPE - 0
-[1970-01-10 02:08:49.014607][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Heading - TRUETYPE - 0
-[1970-01-10 02:08:49.014705][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Display - TRUETYPE - 0
-[1970-01-10 02:08:49.014810][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sitka Banner - TRUETYPE - 0
-[1970-01-10 02:08:49.014915][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Sylfaen - TRUETYPE - 0
-[1970-01-10 02:08:49.015018][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Symbol - TRUETYPE - 2
-[1970-01-10 02:08:49.015124][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Tahoma - TRUETYPE - 0
-[1970-01-10 02:08:49.015226][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman - TRUETYPE - 0
-[1970-01-10 02:08:49.015326][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman Baltic - TRUETYPE - 186
-[1970-01-10 02:08:49.015420][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman CE - TRUETYPE - 238
-[1970-01-10 02:08:49.015523][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman CYR - TRUETYPE - 204
-[1970-01-10 02:08:49.015626][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman Greek - TRUETYPE - 161
-[1970-01-10 02:08:49.015729][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Times New Roman TUR - TRUETYPE - 162
-[1970-01-10 02:08:49.015836][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Trebuchet MS - TRUETYPE - 0
-[1970-01-10 02:08:49.015941][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Verdana - TRUETYPE - 0
-[1970-01-10 02:08:49.016049][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Webdings - TRUETYPE - 2
-[1970-01-10 02:08:49.016149][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Wingdings - TRUETYPE - 2
-[1970-01-10 02:08:49.016245][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.016333][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.016432][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic UI - TRUETYPE - 0
-[1970-01-10 02:08:49.016530][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic UI - TRUETYPE - 0
-[1970-01-10 02:08:49.016631][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic UI Semibold - TRUETYPE - 0
-[1970-01-10 02:08:49.016735][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic UI Semibold - TRUETYPE - 0
-[1970-01-10 02:08:49.016843][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic Light - TRUETYPE - 0
-[1970-01-10 02:08:49.016947][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic Light - TRUETYPE - 0
-[1970-01-10 02:08:49.017045][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.017146][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic UI Light - TRUETYPE - 0
-[1970-01-10 02:08:49.017251][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic Medium - TRUETYPE - 0
-[1970-01-10 02:08:49.017354][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic Medium - TRUETYPE - 0
-[1970-01-10 02:08:49.017457][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Yu Gothic UI Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.017561][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @Yu Gothic UI Semilight - TRUETYPE - 0
-[1970-01-10 02:08:49.017672][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: ZWAdobeF - TRUETYPE - 0
-[1970-01-10 02:08:49.017775][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euro Sign - TRUETYPE - 0
-[1970-01-10 02:08:49.017871][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Bright - TRUETYPE - 0
-[1970-01-10 02:08:49.017963][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Sans - TRUETYPE - 0
-[1970-01-10 02:08:49.018064][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Century - TRUETYPE - 0
-[1970-01-10 02:08:49.018162][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Leelawadee - TRUETYPE - 0
-[1970-01-10 02:08:49.018264][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Microsoft Uighur - TRUETYPE - 0
-[1970-01-10 02:08:49.018373][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Wingdings 2 - TRUETYPE - 2
-[1970-01-10 02:08:49.018474][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Wingdings 3 - TRUETYPE - 2
-[1970-01-10 02:08:49.018577][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Tempus Sans ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.018677][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Pristina - TRUETYPE - 0
-[1970-01-10 02:08:49.018781][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Papyrus - TRUETYPE - 0
-[1970-01-10 02:08:49.018866][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Mistral - TRUETYPE - 0
-[1970-01-10 02:08:49.018950][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Handwriting - TRUETYPE - 0
-[1970-01-10 02:08:49.019078][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Kristen ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.019181][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Juice ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.019283][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: French Script MT - TRUETYPE - 0
-[1970-01-10 02:08:49.019387][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Freestyle Script - TRUETYPE - 0
-[1970-01-10 02:08:49.019489][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bradley Hand ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.019589][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS Outlook - TRUETYPE - 2
-[1970-01-10 02:08:49.019685][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial Narrow - TRUETYPE - 0
-[1970-01-10 02:08:49.019777][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Book Antiqua - TRUETYPE - 0
-[1970-01-10 02:08:49.019881][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Garamond - TRUETYPE - 0
-[1970-01-10 02:08:49.019984][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Monotype Corsiva - TRUETYPE - 0
-[1970-01-10 02:08:49.020087][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Century Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.020192][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Algerian - TRUETYPE - 0
-[1970-01-10 02:08:49.020297][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Baskerville Old Face - TRUETYPE - 0
-[1970-01-10 02:08:49.020400][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bauhaus 93 - TRUETYPE - 0
-[1970-01-10 02:08:49.020499][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bell MT - TRUETYPE - 0
-[1970-01-10 02:08:49.020595][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Berlin Sans FB - TRUETYPE - 0
-[1970-01-10 02:08:49.020690][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bernard MT Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.020788][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bodoni MT Poster Compressed - TRUETYPE - 0
-[1970-01-10 02:08:49.020888][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Britannic Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.020993][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Broadway - TRUETYPE - 0
-[1970-01-10 02:08:49.021097][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Brush Script MT - TRUETYPE - 0
-[1970-01-10 02:08:49.021202][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Californian FB - TRUETYPE - 0
-[1970-01-10 02:08:49.021308][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Centaur - TRUETYPE - 0
-[1970-01-10 02:08:49.021410][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Chiller - TRUETYPE - 0
-[1970-01-10 02:08:49.021503][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Colonna MT - TRUETYPE - 0
-[1970-01-10 02:08:49.021594][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Cooper Black - TRUETYPE - 0
-[1970-01-10 02:08:49.021695][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Footlight MT Light - TRUETYPE - 0
-[1970-01-10 02:08:49.021800][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Harlow Solid Italic - TRUETYPE - 0
-[1970-01-10 02:08:49.021902][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Harrington - TRUETYPE - 0
-[1970-01-10 02:08:49.022003][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: High Tower Text - TRUETYPE - 0
-[1970-01-10 02:08:49.022110][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Jokerman - TRUETYPE - 0
-[1970-01-10 02:08:49.022213][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Kunstler Script - TRUETYPE - 0
-[1970-01-10 02:08:49.022314][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Calligraphy - TRUETYPE - 0
-[1970-01-10 02:08:49.022411][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Fax - TRUETYPE - 0
-[1970-01-10 02:08:49.022505][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Magneto - TRUETYPE - 0
-[1970-01-10 02:08:49.022605][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Matura MT Script Capitals - TRUETYPE - 0
-[1970-01-10 02:08:49.022705][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Modern No. 20 - TRUETYPE - 0
-[1970-01-10 02:08:49.022808][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Niagara Engraved - TRUETYPE - 0
-[1970-01-10 02:08:49.022914][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Niagara Solid - TRUETYPE - 0
-[1970-01-10 02:08:49.023020][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Old English Text MT - TRUETYPE - 0
-[1970-01-10 02:08:49.023127][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Onyx - TRUETYPE - 0
-[1970-01-10 02:08:49.023230][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Parchment - TRUETYPE - 0
-[1970-01-10 02:08:49.023329][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Playbill - TRUETYPE - 0
-[1970-01-10 02:08:49.023428][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Poor Richard - TRUETYPE - 0
-[1970-01-10 02:08:49.023533][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Ravie - TRUETYPE - 0
-[1970-01-10 02:08:49.023636][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Informal Roman - TRUETYPE - 0
-[1970-01-10 02:08:49.023739][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Showcard Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.023842][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Snap ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.023946][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Stencil - TRUETYPE - 0
-[1970-01-10 02:08:49.024050][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Viner Hand ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.024152][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Vivaldi - TRUETYPE - 0
-[1970-01-10 02:08:49.024249][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Vladimir Script - TRUETYPE - 0
-[1970-01-10 02:08:49.024350][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Wide Latin - TRUETYPE - 0
-[1970-01-10 02:08:49.024447][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Tw Cen MT - TRUETYPE - 0
-[1970-01-10 02:08:49.024550][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Tw Cen MT Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.024654][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Script MT Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.024760][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Rockwell Extra Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.024865][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Rockwell Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.024970][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Rockwell - TRUETYPE - 0
-[1970-01-10 02:08:49.025072][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Rage Italic - TRUETYPE - 0
-[1970-01-10 02:08:49.025171][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Perpetua Titling MT - TRUETYPE - 0
-[1970-01-10 02:08:49.025273][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Perpetua - TRUETYPE - 0
-[1970-01-10 02:08:49.025378][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Palace Script MT - TRUETYPE - 0
-[1970-01-10 02:08:49.025481][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: OCR A Extended - TRUETYPE - 0
-[1970-01-10 02:08:49.025585][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Maiandra GD - TRUETYPE - 0
-[1970-01-10 02:08:49.025690][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Lucida Sans Typewriter - TRUETYPE - 0
-[1970-01-10 02:08:49.025797][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Imprint MT Shadow - TRUETYPE - 0
-[1970-01-10 02:08:49.025898][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Haettenschweiler - TRUETYPE - 0
-[1970-01-10 02:08:49.025997][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Goudy Stout - TRUETYPE - 0
-[1970-01-10 02:08:49.026099][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Goudy Old Style - TRUETYPE - 0
-[1970-01-10 02:08:49.026200][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gloucester MT Extra Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.026301][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gill Sans Ultra Bold Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.026408][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gill Sans Ultra Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.026511][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gill Sans MT Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.026617][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gill Sans MT - TRUETYPE - 0
-[1970-01-10 02:08:49.026722][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gill Sans MT Ext Condensed Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.026823][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Gigi - TRUETYPE - 0
-[1970-01-10 02:08:49.026923][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Medium Cond - TRUETYPE - 0
-[1970-01-10 02:08:49.027027][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Heavy - TRUETYPE - 0
-[1970-01-10 02:08:49.027133][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Demi Cond - TRUETYPE - 0
-[1970-01-10 02:08:49.027235][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Demi - TRUETYPE - 0
-[1970-01-10 02:08:49.027339][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Franklin Gothic Book - TRUETYPE - 0
-[1970-01-10 02:08:49.027447][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Forte - TRUETYPE - 0
-[1970-01-10 02:08:49.027550][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Felix Titling - TRUETYPE - 0
-[1970-01-10 02:08:49.027651][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Eras Medium ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.027751][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Eras Light ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.027834][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Eras Demi ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.027912][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Eras Bold ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.028001][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Engravers MT - TRUETYPE - 0
-[1970-01-10 02:08:49.028088][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Elephant - TRUETYPE - 0
-[1970-01-10 02:08:49.028166][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Edwardian Script ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.028249][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Curlz MT - TRUETYPE - 0
-[1970-01-10 02:08:49.028327][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Copperplate Gothic Light - TRUETYPE - 0
-[1970-01-10 02:08:49.028406][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Copperplate Gothic Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.028489][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Century Schoolbook - TRUETYPE - 0
-[1970-01-10 02:08:49.028567][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Castellar - TRUETYPE - 0
-[1970-01-10 02:08:49.028643][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Calisto MT - TRUETYPE - 0
-[1970-01-10 02:08:49.028727][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bookman Old Style - TRUETYPE - 0
-[1970-01-10 02:08:49.028808][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bodoni MT Condensed - TRUETYPE - 0
-[1970-01-10 02:08:49.028894][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bodoni MT Black - TRUETYPE - 0
-[1970-01-10 02:08:49.028971][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bodoni MT - TRUETYPE - 0
-[1970-01-10 02:08:49.029055][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Blackadder ITC - TRUETYPE - 0
-[1970-01-10 02:08:49.029137][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Arial Rounded MT Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.029219][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Agency FB - TRUETYPE - 0
-[1970-01-10 02:08:49.029312][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Bookshelf Symbol 7 - TRUETYPE - 2
-[1970-01-10 02:08:49.029406][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS Reference Sans Serif - TRUETYPE - 0
-[1970-01-10 02:08:49.029498][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS Reference Specialty - TRUETYPE - 2
-[1970-01-10 02:08:49.029588][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Berlin Sans FB Demi - TRUETYPE - 0
-[1970-01-10 02:08:49.029768][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Tw Cen MT Condensed Extra Bold - TRUETYPE - 0
-[1970-01-10 02:08:49.029868][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid - TRUETYPE - 0
-[1970-01-10 02:08:49.029957][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid Symbol - TRUETYPE - 2
-[1970-01-10 02:08:49.030034][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid Extra - TRUETYPE - 2
-[1970-01-10 02:08:49.036841][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid Fraktur - TRUETYPE - 0
-[1970-01-10 02:08:49.036957][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid Math One - TRUETYPE - 2
-[1970-01-10 02:08:49.037049][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Euclid Math Two - TRUETYPE - 2
-[1970-01-10 02:08:49.037136][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Fences - TRUETYPE - 0
-[1970-01-10 02:08:49.037245][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MT Extra - TRUETYPE - 2
-[1970-01-10 02:08:49.037345][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037437][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @MS Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037519][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS UI Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037602][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @MS UI Gothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037687][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: MS PGothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037775][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: @MS PGothic - TRUETYPE - 0
-[1970-01-10 02:08:49.037871][INFO][5992][PasswordGenerator.cpp:EnumFontFamCallback:337] Font Name: Px437 IBM PS/2thin3 - TRUETYPE - 255
+[1970-01-10 05:49:22.146044][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: Terminal - RASTER - 255
+[1970-01-10 05:49:22.146162][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: System - RASTER - 0
+[1970-01-10 05:49:22.146280][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: Fixedsys - RASTER - 0
+[1970-01-10 05:49:22.146406][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Modern - VECTOR - 255
+[1970-01-10 05:49:22.146529][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Roman - VECTOR - 255
+[1970-01-10 05:49:22.146631][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Script - VECTOR - 255
+[1970-01-10 05:49:22.146779][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: Courier - RASTER - 0
+[1970-01-10 05:49:22.146874][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: MS Serif - RASTER - 0
+[1970-01-10 05:49:22.146962][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: MS Sans Serif - RASTER - 0
+[1970-01-10 05:49:22.147056][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:341] Font Name: Small Fonts - RASTER - 0
+[1970-01-10 05:49:22.147147][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Adobe Caslon Pro Bold - VECTOR - 0
+[1970-01-10 05:49:22.147237][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Adobe Caslon Pro - VECTOR - 0
+[1970-01-10 05:49:22.147325][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Adobe Garamond Pro Bold - VECTOR - 0
+[1970-01-10 05:49:22.147414][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Adobe Garamond Pro - VECTOR - 0
+[1970-01-10 05:49:22.147516][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro - VECTOR - 0
+[1970-01-10 05:49:22.147634][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Caption - VECTOR - 0
+[1970-01-10 05:49:22.147723][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Display - VECTOR - 0
+[1970-01-10 05:49:22.147811][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro SmText - VECTOR - 0
+[1970-01-10 05:49:22.147895][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Subhead - VECTOR - 0
+[1970-01-10 05:49:22.147983][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Light Display - VECTOR - 0
+[1970-01-10 05:49:22.148067][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Smbd - VECTOR - 0
+[1970-01-10 05:49:22.148151][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Smbd Caption - VECTOR - 0
+[1970-01-10 05:49:22.148242][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Smbd Display - VECTOR - 0
+[1970-01-10 05:49:22.148324][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Smbd SmText - VECTOR - 0
+[1970-01-10 05:49:22.148438][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Arno Pro Smbd Subhead - VECTOR - 0
+[1970-01-10 05:49:22.148551][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Bell Gothic Std Black - VECTOR - 0
+[1970-01-10 05:49:22.148653][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Bell Gothic Std Light - VECTOR - 0
+[1970-01-10 05:49:22.148747][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Bickham Script Pro Regular - VECTOR - 0
+[1970-01-10 05:49:22.148840][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Bickham Script Pro Semibold - VECTOR - 0
+[1970-01-10 05:49:22.148937][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Birch Std - VECTOR - 0
+[1970-01-10 05:49:22.149039][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Blackoak Std - VECTOR - 0
+[1970-01-10 05:49:22.149128][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Brush Script Std - VECTOR - 0
+[1970-01-10 05:49:22.149224][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Chaparral Pro - VECTOR - 0
+[1970-01-10 05:49:22.149312][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Charlemagne Std - VECTOR - 0
+[1970-01-10 05:49:22.149400][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Cooper Std Black - VECTOR - 0
+[1970-01-10 05:49:22.149488][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Eccentric Std - VECTOR - 0
+[1970-01-10 05:49:22.149563][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Garamond Premr Pro - VECTOR - 0
+[1970-01-10 05:49:22.149636][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Garamond Premr Pro Smbd - VECTOR - 0
+[1970-01-10 05:49:22.149715][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Giddyup Std - VECTOR - 0
+[1970-01-10 05:49:22.149788][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Hobo Std - VECTOR - 0
+[1970-01-10 05:49:22.149872][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro B - VECTOR - 128
+[1970-01-10 05:49:22.149946][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro B - VECTOR - 128
+[1970-01-10 05:49:22.150019][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro EL - VECTOR - 128
+[1970-01-10 05:49:22.150098][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro EL - VECTOR - 128
+[1970-01-10 05:49:22.150178][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro H - VECTOR - 128
+[1970-01-10 05:49:22.150251][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro H - VECTOR - 128
+[1970-01-10 05:49:22.150329][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro L - VECTOR - 128
+[1970-01-10 05:49:22.150402][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro L - VECTOR - 128
+[1970-01-10 05:49:22.150478][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro M - VECTOR - 128
+[1970-01-10 05:49:22.150559][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro M - VECTOR - 128
+[1970-01-10 05:49:22.150631][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Gothic Pro R - VECTOR - 128
+[1970-01-10 05:49:22.150703][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Gothic Pro R - VECTOR - 128
+[1970-01-10 05:49:22.150774][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro B - VECTOR - 128
+[1970-01-10 05:49:22.150852][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro B - VECTOR - 128
+[1970-01-10 05:49:22.150925][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro EL - VECTOR - 128
+[1970-01-10 05:49:22.150998][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro EL - VECTOR - 128
+[1970-01-10 05:49:22.151087][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro H - VECTOR - 128
+[1970-01-10 05:49:22.151162][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro H - VECTOR - 128
+[1970-01-10 05:49:22.151235][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro L - VECTOR - 128
+[1970-01-10 05:49:22.151314][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro L - VECTOR - 128
+[1970-01-10 05:49:22.151386][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro M - VECTOR - 128
+[1970-01-10 05:49:22.151458][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro M - VECTOR - 128
+[1970-01-10 05:49:22.151540][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Kozuka Mincho Pro R - VECTOR - 128
+[1970-01-10 05:49:22.151621][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: @Kozuka Mincho Pro R - VECTOR - 128
+[1970-01-10 05:49:22.151696][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Letter Gothic Std - VECTOR - 0
+[1970-01-10 05:49:22.151775][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Lithos Pro Regular - VECTOR - 0
+[1970-01-10 05:49:22.151850][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Mesquite Std - VECTOR - 0
+[1970-01-10 05:49:22.151923][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Minion Pro - VECTOR - 0
+[1970-01-10 05:49:22.152005][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Minion Pro Cond - VECTOR - 0
+[1970-01-10 05:49:22.152078][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Minion Pro Med - VECTOR - 0
+[1970-01-10 05:49:22.152151][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Minion Pro SmBd - VECTOR - 0
+[1970-01-10 05:49:22.152223][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Myriad Pro - VECTOR - 0
+[1970-01-10 05:49:22.152301][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Myriad Pro Cond - VECTOR - 0
+[1970-01-10 05:49:22.152374][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Myriad Pro Light - VECTOR - 0
+[1970-01-10 05:49:22.152447][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Nueva Std Cond - VECTOR - 0
+[1970-01-10 05:49:22.152518][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: OCR A Std - VECTOR - 0
+[1970-01-10 05:49:22.152603][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Orator Std - VECTOR - 0
+[1970-01-10 05:49:22.152675][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Poplar Std - VECTOR - 0
+[1970-01-10 05:49:22.152748][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Prestige Elite Std - VECTOR - 0
+[1970-01-10 05:49:22.152827][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Rosewood Std Regular - VECTOR - 0
+[1970-01-10 05:49:22.152903][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Stencil Std - VECTOR - 0
+[1970-01-10 05:49:22.152975][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Tekton Pro - VECTOR - 0
+[1970-01-10 05:49:22.153053][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Tekton Pro Cond - VECTOR - 0
+[1970-01-10 05:49:22.153126][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Tekton Pro Ext - VECTOR - 0
+[1970-01-10 05:49:22.153200][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:345] Font Name: Trajan Pro - VECTOR - 0
+[1970-01-10 05:49:22.153271][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Marlett - TRUETYPE - 2
+[1970-01-10 05:49:22.153349][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial - TRUETYPE - 0
+[1970-01-10 05:49:22.153421][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arabic Transparent - TRUETYPE - 0
+[1970-01-10 05:49:22.153494][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial Baltic - TRUETYPE - 186
+[1970-01-10 05:49:22.153565][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial CE - TRUETYPE - 238
+[1970-01-10 05:49:22.153643][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial CYR - TRUETYPE - 204
+[1970-01-10 05:49:22.153716][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial Greek - TRUETYPE - 161
+[1970-01-10 05:49:22.153789][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial TUR - TRUETYPE - 162
+[1970-01-10 05:49:22.153870][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial Black - TRUETYPE - 0
+[1970-01-10 05:49:22.153943][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Calibri - TRUETYPE - 0
+[1970-01-10 05:49:22.154016][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Calibri Light - TRUETYPE - 0
+[1970-01-10 05:49:22.154096][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Cambria - TRUETYPE - 0
+[1970-01-10 05:49:22.154172][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Cambria Math - TRUETYPE - 0
+[1970-01-10 05:49:22.154247][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Candara - TRUETYPE - 0
+[1970-01-10 05:49:22.154329][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Comic Sans MS - TRUETYPE - 0
+[1970-01-10 05:49:22.154403][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Consolas - TRUETYPE - 0
+[1970-01-10 05:49:22.154475][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Constantia - TRUETYPE - 0
+[1970-01-10 05:49:22.154546][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Corbel - TRUETYPE - 0
+[1970-01-10 05:49:22.154624][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New - TRUETYPE - 0
+[1970-01-10 05:49:22.154697][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New Baltic - TRUETYPE - 186
+[1970-01-10 05:49:22.154769][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New CE - TRUETYPE - 238
+[1970-01-10 05:49:22.154848][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New CYR - TRUETYPE - 204
+[1970-01-10 05:49:22.154922][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New Greek - TRUETYPE - 161
+[1970-01-10 05:49:22.155122][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Courier New TUR - TRUETYPE - 162
+[1970-01-10 05:49:22.155296][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Ebrima - TRUETYPE - 0
+[1970-01-10 05:49:22.155420][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Medium - TRUETYPE - 0
+[1970-01-10 05:49:22.155504][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gabriola - TRUETYPE - 0
+[1970-01-10 05:49:22.155652][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gadugi - TRUETYPE - 0
+[1970-01-10 05:49:22.155736][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Georgia - TRUETYPE - 0
+[1970-01-10 05:49:22.155817][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Impact - TRUETYPE - 0
+[1970-01-10 05:49:22.155903][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Javanese Text - TRUETYPE - 0
+[1970-01-10 05:49:22.155987][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Leelawadee UI - TRUETYPE - 0
+[1970-01-10 05:49:22.156073][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Leelawadee UI Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.156192][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Console - TRUETYPE - 0
+[1970-01-10 05:49:22.156290][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Sans Unicode - TRUETYPE - 0
+[1970-01-10 05:49:22.156399][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Malgun Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.156525][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Malgun Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.156611][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Malgun Gothic Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.156696][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Malgun Gothic Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.156785][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft Himalaya - TRUETYPE - 0
+[1970-01-10 05:49:22.156871][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft JhengHei - TRUETYPE - 0
+[1970-01-10 05:49:22.156957][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft JhengHei - TRUETYPE - 0
+[1970-01-10 05:49:22.157107][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft JhengHei UI - TRUETYPE - 0
+[1970-01-10 05:49:22.157226][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft JhengHei UI - TRUETYPE - 0
+[1970-01-10 05:49:22.157313][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft JhengHei Light - TRUETYPE - 0
+[1970-01-10 05:49:22.157422][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft JhengHei Light - TRUETYPE - 0
+[1970-01-10 05:49:22.157536][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft JhengHei UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.157656][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft JhengHei UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.157788][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft New Tai Lue - TRUETYPE - 0
+[1970-01-10 05:49:22.157878][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft PhagsPa - TRUETYPE - 0
+[1970-01-10 05:49:22.157982][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft Sans Serif - TRUETYPE - 0
+[1970-01-10 05:49:22.158081][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft Tai Le - TRUETYPE - 0
+[1970-01-10 05:49:22.158223][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft YaHei - TRUETYPE - 0
+[1970-01-10 05:49:22.158394][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft YaHei - TRUETYPE - 0
+[1970-01-10 05:49:22.158555][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft YaHei UI - TRUETYPE - 0
+[1970-01-10 05:49:22.158632][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft YaHei UI - TRUETYPE - 0
+[1970-01-10 05:49:22.158706][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft YaHei Light - TRUETYPE - 0
+[1970-01-10 05:49:22.158779][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft YaHei Light - TRUETYPE - 0
+[1970-01-10 05:49:22.158861][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft YaHei UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.158939][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Microsoft YaHei UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.159020][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft Yi Baiti - TRUETYPE - 0
+[1970-01-10 05:49:22.159094][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MingLiU-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159177][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @MingLiU-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159250][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: PMingLiU-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159331][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @PMingLiU-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159406][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MingLiU_HKSCS-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159481][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @MingLiU_HKSCS-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.159561][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Mongolian Baiti - TRUETYPE - 0
+[1970-01-10 05:49:22.159635][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MV Boli - TRUETYPE - 0
+[1970-01-10 05:49:22.159708][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Myanmar Text - TRUETYPE - 0
+[1970-01-10 05:49:22.159780][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Nirmala UI - TRUETYPE - 0
+[1970-01-10 05:49:22.159859][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Nirmala UI Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.159933][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Palatino Linotype - TRUETYPE - 0
+[1970-01-10 05:49:22.160006][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe MDL2 Assets - TRUETYPE - 0
+[1970-01-10 05:49:22.160094][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe Print - TRUETYPE - 0
+[1970-01-10 05:49:22.160185][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe Script - TRUETYPE - 0
+[1970-01-10 05:49:22.160268][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI - TRUETYPE - 0
+[1970-01-10 05:49:22.160342][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Black - TRUETYPE - 0
+[1970-01-10 05:49:22.160415][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Emoji - TRUETYPE - 0
+[1970-01-10 05:49:22.160488][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Historic - TRUETYPE - 0
+[1970-01-10 05:49:22.160568][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.160647][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Semibold - TRUETYPE - 0
+[1970-01-10 05:49:22.160730][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.160818][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Segoe UI Symbol - TRUETYPE - 0
+[1970-01-10 05:49:22.160895][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: SimSun - TRUETYPE - 0
+[1970-01-10 05:49:22.160969][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @SimSun - TRUETYPE - 0
+[1970-01-10 05:49:22.161051][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: NSimSun - TRUETYPE - 0
+[1970-01-10 05:49:22.161125][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @NSimSun - TRUETYPE - 0
+[1970-01-10 05:49:22.161219][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: SimSun-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.161297][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @SimSun-ExtB - TRUETYPE - 0
+[1970-01-10 05:49:22.161378][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Small - TRUETYPE - 0
+[1970-01-10 05:49:22.161456][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Text - TRUETYPE - 0
+[1970-01-10 05:49:22.161538][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Subheading - TRUETYPE - 0
+[1970-01-10 05:49:22.161619][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Heading - TRUETYPE - 0
+[1970-01-10 05:49:22.161693][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Display - TRUETYPE - 0
+[1970-01-10 05:49:22.161772][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sitka Banner - TRUETYPE - 0
+[1970-01-10 05:49:22.161845][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Sylfaen - TRUETYPE - 0
+[1970-01-10 05:49:22.161918][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Symbol - TRUETYPE - 2
+[1970-01-10 05:49:22.162000][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Tahoma - TRUETYPE - 0
+[1970-01-10 05:49:22.162088][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman - TRUETYPE - 0
+[1970-01-10 05:49:22.162172][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman Baltic - TRUETYPE - 186
+[1970-01-10 05:49:22.162252][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman CE - TRUETYPE - 238
+[1970-01-10 05:49:22.162339][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman CYR - TRUETYPE - 204
+[1970-01-10 05:49:22.162414][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman Greek - TRUETYPE - 161
+[1970-01-10 05:49:22.162488][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Times New Roman TUR - TRUETYPE - 162
+[1970-01-10 05:49:22.162569][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Trebuchet MS - TRUETYPE - 0
+[1970-01-10 05:49:22.162644][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Verdana - TRUETYPE - 0
+[1970-01-10 05:49:22.162720][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Webdings - TRUETYPE - 2
+[1970-01-10 05:49:22.162802][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Wingdings - TRUETYPE - 2
+[1970-01-10 05:49:22.162876][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.162950][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.163029][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic UI - TRUETYPE - 0
+[1970-01-10 05:49:22.163102][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic UI - TRUETYPE - 0
+[1970-01-10 05:49:22.163183][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic UI Semibold - TRUETYPE - 0
+[1970-01-10 05:49:22.163267][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic UI Semibold - TRUETYPE - 0
+[1970-01-10 05:49:22.163340][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic Light - TRUETYPE - 0
+[1970-01-10 05:49:22.163413][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic Light - TRUETYPE - 0
+[1970-01-10 05:49:22.163492][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.163565][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic UI Light - TRUETYPE - 0
+[1970-01-10 05:49:22.163639][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic Medium - TRUETYPE - 0
+[1970-01-10 05:49:22.163718][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic Medium - TRUETYPE - 0
+[1970-01-10 05:49:22.163791][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Yu Gothic UI Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.163865][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @Yu Gothic UI Semilight - TRUETYPE - 0
+[1970-01-10 05:49:22.163947][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: ZWAdobeF - TRUETYPE - 0
+[1970-01-10 05:49:22.164023][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euro Sign - TRUETYPE - 0
+[1970-01-10 05:49:22.164529][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Bright - TRUETYPE - 0
+[1970-01-10 05:49:22.164611][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Sans - TRUETYPE - 0
+[1970-01-10 05:49:22.164697][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Century - TRUETYPE - 0
+[1970-01-10 05:49:22.164781][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Leelawadee - TRUETYPE - 0
+[1970-01-10 05:49:22.164866][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Microsoft Uighur - TRUETYPE - 0
+[1970-01-10 05:49:22.164953][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Wingdings 2 - TRUETYPE - 2
+[1970-01-10 05:49:22.165040][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Wingdings 3 - TRUETYPE - 2
+[1970-01-10 05:49:22.165125][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Tempus Sans ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.165292][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Pristina - TRUETYPE - 0
+[1970-01-10 05:49:22.165397][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Papyrus - TRUETYPE - 0
+[1970-01-10 05:49:22.165491][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Mistral - TRUETYPE - 0
+[1970-01-10 05:49:22.165580][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Handwriting - TRUETYPE - 0
+[1970-01-10 05:49:22.165680][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Kristen ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.165771][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Juice ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.165863][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: French Script MT - TRUETYPE - 0
+[1970-01-10 05:49:22.165956][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Freestyle Script - TRUETYPE - 0
+[1970-01-10 05:49:22.166048][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bradley Hand ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.166138][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS Outlook - TRUETYPE - 2
+[1970-01-10 05:49:22.166228][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial Narrow - TRUETYPE - 0
+[1970-01-10 05:49:22.166318][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Book Antiqua - TRUETYPE - 0
+[1970-01-10 05:49:22.166416][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Garamond - TRUETYPE - 0
+[1970-01-10 05:49:22.166532][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Monotype Corsiva - TRUETYPE - 0
+[1970-01-10 05:49:22.166681][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Century Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.166865][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Algerian - TRUETYPE - 0
+[1970-01-10 05:49:22.166956][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Baskerville Old Face - TRUETYPE - 0
+[1970-01-10 05:49:22.167045][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bauhaus 93 - TRUETYPE - 0
+[1970-01-10 05:49:22.167119][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bell MT - TRUETYPE - 0
+[1970-01-10 05:49:22.167197][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Berlin Sans FB - TRUETYPE - 0
+[1970-01-10 05:49:22.167280][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bernard MT Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.167354][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bodoni MT Poster Compressed - TRUETYPE - 0
+[1970-01-10 05:49:22.167438][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Britannic Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.167512][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Broadway - TRUETYPE - 0
+[1970-01-10 05:49:22.167586][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Brush Script MT - TRUETYPE - 0
+[1970-01-10 05:49:22.167659][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Californian FB - TRUETYPE - 0
+[1970-01-10 05:49:22.167738][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Centaur - TRUETYPE - 0
+[1970-01-10 05:49:22.167812][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Chiller - TRUETYPE - 0
+[1970-01-10 05:49:22.167886][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Colonna MT - TRUETYPE - 0
+[1970-01-10 05:49:22.167985][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Cooper Black - TRUETYPE - 0
+[1970-01-10 05:49:22.168080][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Footlight MT Light - TRUETYPE - 0
+[1970-01-10 05:49:22.168161][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Harlow Solid Italic - TRUETYPE - 0
+[1970-01-10 05:49:22.168315][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Harrington - TRUETYPE - 0
+[1970-01-10 05:49:22.168460][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: High Tower Text - TRUETYPE - 0
+[1970-01-10 05:49:22.168535][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Jokerman - TRUETYPE - 0
+[1970-01-10 05:49:22.168609][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Kunstler Script - TRUETYPE - 0
+[1970-01-10 05:49:22.168682][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Calligraphy - TRUETYPE - 0
+[1970-01-10 05:49:22.168762][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Fax - TRUETYPE - 0
+[1970-01-10 05:49:22.168860][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Magneto - TRUETYPE - 0
+[1970-01-10 05:49:22.168938][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Matura MT Script Capitals - TRUETYPE - 0
+[1970-01-10 05:49:22.169061][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Modern No. 20 - TRUETYPE - 0
+[1970-01-10 05:49:22.169204][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Niagara Engraved - TRUETYPE - 0
+[1970-01-10 05:49:22.169320][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Niagara Solid - TRUETYPE - 0
+[1970-01-10 05:49:22.169421][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Old English Text MT - TRUETYPE - 0
+[1970-01-10 05:49:22.169520][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Onyx - TRUETYPE - 0
+[1970-01-10 05:49:22.169619][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Parchment - TRUETYPE - 0
+[1970-01-10 05:49:22.169718][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Playbill - TRUETYPE - 0
+[1970-01-10 05:49:22.169819][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Poor Richard - TRUETYPE - 0
+[1970-01-10 05:49:22.169922][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Ravie - TRUETYPE - 0
+[1970-01-10 05:49:22.170020][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Informal Roman - TRUETYPE - 0
+[1970-01-10 05:49:22.170120][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Showcard Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.170245][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Snap ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.170342][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Stencil - TRUETYPE - 0
+[1970-01-10 05:49:22.170440][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Viner Hand ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.170541][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Vivaldi - TRUETYPE - 0
+[1970-01-10 05:49:22.170640][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Vladimir Script - TRUETYPE - 0
+[1970-01-10 05:49:22.170738][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Wide Latin - TRUETYPE - 0
+[1970-01-10 05:49:22.170837][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Tw Cen MT - TRUETYPE - 0
+[1970-01-10 05:49:22.170936][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Tw Cen MT Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.171035][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Script MT Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.171135][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Rockwell Extra Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.171235][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Rockwell Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.171334][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Rockwell - TRUETYPE - 0
+[1970-01-10 05:49:22.171433][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Rage Italic - TRUETYPE - 0
+[1970-01-10 05:49:22.171532][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Perpetua Titling MT - TRUETYPE - 0
+[1970-01-10 05:49:22.171631][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Perpetua - TRUETYPE - 0
+[1970-01-10 05:49:22.171729][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Palace Script MT - TRUETYPE - 0
+[1970-01-10 05:49:22.171828][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: OCR A Extended - TRUETYPE - 0
+[1970-01-10 05:49:22.171925][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Maiandra GD - TRUETYPE - 0
+[1970-01-10 05:49:22.172024][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Lucida Sans Typewriter - TRUETYPE - 0
+[1970-01-10 05:49:22.172124][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Imprint MT Shadow - TRUETYPE - 0
+[1970-01-10 05:49:22.172226][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Haettenschweiler - TRUETYPE - 0
+[1970-01-10 05:49:22.172325][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Goudy Stout - TRUETYPE - 0
+[1970-01-10 05:49:22.172423][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Goudy Old Style - TRUETYPE - 0
+[1970-01-10 05:49:22.172522][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gloucester MT Extra Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.172621][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gill Sans Ultra Bold Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.172721][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gill Sans Ultra Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.172820][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gill Sans MT Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.172919][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gill Sans MT - TRUETYPE - 0
+[1970-01-10 05:49:22.173017][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gill Sans MT Ext Condensed Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.173115][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Gigi - TRUETYPE - 0
+[1970-01-10 05:49:22.173215][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Medium Cond - TRUETYPE - 0
+[1970-01-10 05:49:22.173314][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Heavy - TRUETYPE - 0
+[1970-01-10 05:49:22.173409][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Demi Cond - TRUETYPE - 0
+[1970-01-10 05:49:22.173508][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Demi - TRUETYPE - 0
+[1970-01-10 05:49:22.173607][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Franklin Gothic Book - TRUETYPE - 0
+[1970-01-10 05:49:22.173707][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Forte - TRUETYPE - 0
+[1970-01-10 05:49:22.173805][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Felix Titling - TRUETYPE - 0
+[1970-01-10 05:49:22.173903][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Eras Medium ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.174001][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Eras Light ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.174098][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Eras Demi ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.174199][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Eras Bold ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.174296][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Engravers MT - TRUETYPE - 0
+[1970-01-10 05:49:22.174395][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Elephant - TRUETYPE - 0
+[1970-01-10 05:49:22.174493][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Edwardian Script ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.174590][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Curlz MT - TRUETYPE - 0
+[1970-01-10 05:49:22.174689][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Copperplate Gothic Light - TRUETYPE - 0
+[1970-01-10 05:49:22.174788][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Copperplate Gothic Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.174886][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Century Schoolbook - TRUETYPE - 0
+[1970-01-10 05:49:22.174980][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Castellar - TRUETYPE - 0
+[1970-01-10 05:49:22.175079][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Calisto MT - TRUETYPE - 0
+[1970-01-10 05:49:22.175184][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bookman Old Style - TRUETYPE - 0
+[1970-01-10 05:49:22.175284][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bodoni MT Condensed - TRUETYPE - 0
+[1970-01-10 05:49:22.175382][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bodoni MT Black - TRUETYPE - 0
+[1970-01-10 05:49:22.175466][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bodoni MT - TRUETYPE - 0
+[1970-01-10 05:49:22.175549][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Blackadder ITC - TRUETYPE - 0
+[1970-01-10 05:49:22.175635][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Arial Rounded MT Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.175712][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Agency FB - TRUETYPE - 0
+[1970-01-10 05:49:22.176239][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Bookshelf Symbol 7 - TRUETYPE - 2
+[1970-01-10 05:49:22.176351][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS Reference Sans Serif - TRUETYPE - 0
+[1970-01-10 05:49:22.176467][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS Reference Specialty - TRUETYPE - 2
+[1970-01-10 05:49:22.176620][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Berlin Sans FB Demi - TRUETYPE - 0
+[1970-01-10 05:49:22.176717][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Tw Cen MT Condensed Extra Bold - TRUETYPE - 0
+[1970-01-10 05:49:22.176812][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid - TRUETYPE - 0
+[1970-01-10 05:49:22.176911][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid Symbol - TRUETYPE - 2
+[1970-01-10 05:49:22.177011][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid Extra - TRUETYPE - 2
+[1970-01-10 05:49:22.177915][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid Fraktur - TRUETYPE - 0
+[1970-01-10 05:49:22.182591][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid Math One - TRUETYPE - 2
+[1970-01-10 05:49:22.182707][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Euclid Math Two - TRUETYPE - 2
+[1970-01-10 05:49:22.182790][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Fences - TRUETYPE - 0
+[1970-01-10 05:49:22.182934][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MT Extra - TRUETYPE - 2
+[1970-01-10 05:49:22.183018][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183103][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @MS Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183240][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS UI Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183338][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @MS UI Gothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183430][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: MS PGothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183522][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: @MS PGothic - TRUETYPE - 0
+[1970-01-10 05:49:22.183611][INFO][4256][PasswordGenerator.cpp:EnumFontFamCallback:343] Font Name: Px437 IBM PS/2thin3 - TRUETYPE - 255
