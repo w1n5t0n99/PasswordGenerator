@@ -1,12 +1,19 @@
 #include "main_window.h"
 #include "resource.h"
 
+#include "NanoLog.hpp"
+
+
 namespace ui
 {
 	static const int IDC_TEST_BTN = 100;
+	static HICON hIcon{};
+	static HICON hIcon_small{};
+
 
 	MainWindow::MainWindow(std::string title, HINSTANCE hinst) : hinst_(hinst), title_(ConvertToTString(title))
 	{
+
 		auto res = AddFontResourceEx(TEXT("Px437_IBM_PS2thin3.ttf"), FR_PRIVATE, NULL);
 
 		HICON hIcon = static_cast<HICON>(LoadImage(hinst,
@@ -24,10 +31,10 @@ namespace ui
 		ZeroMemory(&wcex_, sizeof(wcex_));
 		wcex_.cbSize = sizeof(wcex_);	// WNDCLASSEX size in bytes
 		wcex_.style = CS_HREDRAW | CS_VREDRAW;		// Window class styles
-		wcex_.lpszClassName = (title_ + tstring(TEXT("_window"))).c_str();	// Window class name
+		wcex_.lpszClassName = TEXT("MAIN_WINDOW");	// Window class name
 		wcex_.hbrBackground = (HBRUSH)(COLOR_WINDOW + 2);	// Window background brush color.
 		wcex_.hCursor = LoadCursor(hinst, IDC_ARROW); // Window cursor
-		wcex_.lpfnWndProc = WndProc;
+		wcex_.lpfnWndProc = MainWindow::WndProc;
 		wcex_.hIcon = hIcon;
 		wcex_.hIconSm = hIcon_small;
 		// Register window and ensure registration success.
@@ -93,6 +100,8 @@ namespace ui
 				if (GetLastError() != 0)
 					return FALSE;
 			}
+
+			DefWindowProc(hWnd, uMsg, wParam, lParam);
 			break;
 		}
 
