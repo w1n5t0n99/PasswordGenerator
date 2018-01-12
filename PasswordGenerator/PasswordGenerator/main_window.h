@@ -5,7 +5,6 @@
 
 #include "windows_util.h"
 
-
 namespace ui
 {
 
@@ -16,10 +15,12 @@ namespace ui
 		~MainWindow();
 		
 	private:
-		LRESULT CALLBACK Proc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+		static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+		LRESULT CALLBACK WndInstProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 		tstring title_;
 		HINSTANCE hinst_;
+		HWND hwnd_{};
 		WNDCLASSEX wcex_{};
 		CREATESTRUCT cs_{};
 	};

@@ -14,13 +14,13 @@ using tstringstream = std::basic_stringstream<TCHAR>;
 
 #ifdef  UNICODE
 
-tstring ConvertToTString(const std::string& src)
+inline tstring ConvertToTString(const std::string& src)
 {
 	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
 	return converter.from_bytes(src);
 }
 
-std::string ConvertFromTString(const tstring& src)
+inline std::string ConvertFromTString(const tstring& src)
 {
 	std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
 	return converter.to_bytes(src);
