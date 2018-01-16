@@ -133,7 +133,6 @@ namespace ui
 			int gen_btn_width = 90;
 			int gen_btn_height = 36;
 			gen_btn_ = new Button("btn", hWnd, KGenBtnId, ((window_width_ / 2) - (gen_btn_width / 2)), ((window_height_ / 2) + (gen_btn_height / 2)), gen_btn_width, gen_btn_height);
-
 			return 0;
 		}
 
@@ -173,21 +172,42 @@ namespace ui
 
 		case WM_NCPAINT:
 		{
-			HDC hdc;
-			HRGN rgn = (HRGN)wParam;
-
-			if ((wParam == 0) || (wParam == 1))
-				hdc = GetWindowDC(hWnd);
-			else
-				hdc = GetDCEx(hWnd, (HRGN)wParam, DCX_WINDOW | DCX_CACHE | DCX_LOCKWINDOWUPDATE | DCX_INTERSECTRGN);
-
-			//ValidateRect(hWnd, )
-
+			HDC hdc = GetWindowDC(hWnd);
 			DrawTitlebar(hWnd, hdc);
--
-			ReleaseDC(hWnd, hdc);
-			//return DefWindowProc(hWnd, uMsg, wParam, lParam);
+-			ReleaseDC(hWnd, hdc);
 			return 0;
+		}
+
+		case WM_PAINT:
+		{
+			//return DefWindowProc(hWnd, uMsg, wParam, lParam);
+
+			PAINTSTRUCT ps;
+			HDC hdc = BeginPaint(hWnd, &ps);
+			TextOut(hdc, 20, 20, TEXT("Client Text"), 12);
+			EndPaint(hWnd, &ps);
+			return 0;
+		}
+
+		case WM_NCMOUSEMOVE:
+		{
+			POINT pt;
+			pt.x = LOWORD(lParam);
+			pt.y = HIWORD(lParam);
+
+			RECT exit_rect{};
+			//window_width_ - exit_btn_width_, 0, exit_btn_width_, titlebar_offset_, exit_color_[exit_btn_state_]
+			exit_rect.bottom = titlebar_offset_ + 1;
+			exit_rect.left = window_width_ - exit_btn_width_;
+			exit_rect.right = window_width_ + 1;
+			exit_rect.top = 0;
+
+			if (exit_btn_state_ == 0)
+			{
+				exit_btn_state_ = 2;
+				SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+			}
+
 		}
 
 		case WM_NCACTIVATE:
@@ -283,50 +303,57 @@ namespace ui
 	void MainWindow::DrawTitlebar(HWND hwnd, HDC hdc)
 	{
 
-		RECT rc;
-		GetWindowRect(hwnd, &rc);
+		DrawRectangle(hdc, 0, 0, window_width_ - exit_btn_width_, titlebar_offset_, bg_color_[active_win_]);
 
-		// draw title
-		HBRUSH br = CreateSolidBrush(bg_color_[active_win_]);
-		HBRUSH br_old = reinterpret_cast<HBRUSH>(SelectObject(hdc, br));
-
-		HBRUSH exit_br = CreateSolidBrush(exit_color_[exit_btn_state_]);
+		DrawRectangle(hdc, window_width_ - exit_btn_width_ , 0, exit_btn_width_, titlebar_offset_, exit_color_[exit_btn_state_]);
 
 		HFONT fnt = CreateFontUtil(hdc, 14, TEXT("Px437 IBM PS/2thin3"), FW_DONTCARE, false, false, false, 255);
 		HFONT fnt_old = reinterpret_cast<HFONT>(SelectObject(hdc, fnt));
 
-		HPEN pen = CreatePen(PS_NULL, 1, RGB(0, 0, 0));
-		HPEN prevPen = (HPEN)SelectObject(hdc, pen);
-
-		Rectangle(hdc, 0, 0, window_width_ - exit_btn_width_, titlebar_offset_ + 1);
-
-		SelectObject(hdc, prevPen);
-
-
 		SetBkMode(hdc, TRANSPARENT);
 
 		TextOut(hdc, 1, 1, title_.c_str(), title_.length());
+		TextOut(hdc, window_width_ - (exit_btn_width_ / 2), 1, TEXT("X"), 2);
 
-	//	RECT rect{};
-	//	SetRect(&rect, 0, 0, window_width_-exit_btn_width_, titlebar_offset_);
-	//	FillRect(hdc, &rect, br);
-	//	SetBkMode(hdc, TRANSPARENT);
-	//	DrawText(hdc, title_.c_str(), title_.length(), &rect,DT_LEFT);
-
-	//	SelectObject(hdc, exit_br);
-	//	SetRect(&rect, window_width_ - exit_btn_width_, 0, window_width_, exit_btn_height_);
-	//	FillRect(hdc, &rect, exit_br);
-	//	DrawText(hdc, TEXT("X"), 1, &rect, DT_CENTER);
 
 		SetBkMode(hdc, OPAQUE);
 
-		SelectObject(hdc, br_old);
 		SelectObject(hdc, fnt_old);
-		
-		DeleteObject(pen);
-		DeleteObject(br);
-		DeleteObject(exit_br);
 		DeleteObject(fnt);
+	}
+
+	void MainWindow::DrawRectangle(HDC hdc, int x, int y, int width, int height, COLORREF bg)
+	{
+		HPEN pen = CreatePen(PS_NULL, 1, RGB(0, 0, 0));
+		HPEN prev_pen =  reinterpret_cast<HPEN>(SelectObject(hdc, pen));
+
+		HBRUSH brush = NULL;
+		HBRUSH prev_brush = NULL;
+
+		if (bg != 0) 
+		{
+			brush = CreateSolidBrush(bg);
+		}
+		else 
+		{
+			LOGBRUSH lb;
+			ZeroMemory(&lb, sizeof(lb));
+			lb.lbStyle = BS_NULL;
+			brush = CreateBrushIndirect(&lb);
+		}
+
+		prev_brush = reinterpret_cast<HBRUSH>(SelectObject(hdc, brush));
+
+		Rectangle(hdc, x, y, x + width + 1, y + height + 1);
+
+		// Restore previos objects
+		SelectObject(hdc, prev_pen);
+		SelectObject(hdc, prev_brush);
+
+		// Delete created objects
+		DeleteObject(pen);
+		DeleteObject(brush);
+
 	}
 
 	void MainWindow::TrackMouse(HWND hwnd)

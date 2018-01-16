@@ -47,6 +47,7 @@ namespace ui
 		LRESULT CALLBACK WndInstProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 		void DrawTitlebar(HWND hwnd, HDC hdc);
+		void DrawRectangle(HDC hdc, int x, int y, int width, int height, COLORREF bg);
 		void TrackMouse(HWND hwnd);
 
 	private:
