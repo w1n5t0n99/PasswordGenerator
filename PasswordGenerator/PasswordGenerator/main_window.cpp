@@ -6,10 +6,13 @@
 
 namespace ui
 {
-	static const int IDC_TEST_BTN = 100;
+	static const int KGenBtnId = 100;
 	static HICON hIcon{};
 	static HICON hIcon_small{};
 
+	//======================================
+	// main window
+	//=======================================
 
 	MainWindow::MainWindow(std::string title, HINSTANCE hinst) : hinst_(hinst), title_(ConvertToTString(title))
 	{
@@ -33,7 +36,7 @@ namespace ui
 		wcex_.style = CS_HREDRAW | CS_VREDRAW;		// Window class styles
 		wcex_.lpszClassName = TEXT("MAIN_WINDOW");	// Window class name
 		wcex_.hbrBackground = (HBRUSH)(COLOR_WINDOW + 2);	// Window background brush color.
-		wcex_.hCursor = LoadCursor(hinst, IDC_ARROW); // Window cursor
+		wcex_.hCursor = LoadCursor(NULL, IDC_ARROW); // Window cursor
 		wcex_.lpfnWndProc = MainWindow::WndProc;
 		wcex_.hIcon = hIcon;
 		wcex_.hIconSm = hIcon_small;
@@ -42,21 +45,20 @@ namespace ui
 			throw std::runtime_error("could not register window: " + title);
 
 		ZeroMemory(&cs_, sizeof(cs_));
-		int window_width = 280;
-		int window_height = 240;
 		auto screen_width = GetSystemMetrics(SM_CXSCREEN);
 		auto screen_height = GetSystemMetrics(SM_CYSCREEN);
-		auto pos_x = (screen_width / 2) - (window_width / 2);
-		auto pos_y = (screen_height / 2) - (window_height / 2);
+		// set to middle of screen
+		posx_ = (screen_width / 2) - (window_width_ / 2);
+		posy_ = (screen_height / 2) - (window_height_ / 2);
 
-		cs_.x = pos_x;	// Window X position
-		cs_.y = pos_y;	// Window Y position
-		cs_.cx = window_width;	// Window width
-		cs_.cy = window_height;	// Window height
+		cs_.x = posx_;	// Window X position
+		cs_.y = posy_;	// Window Y position
+		cs_.cx = window_width_;	// Window width
+		cs_.cy = window_height_;	// Window height
 		cs_.hInstance = hinst_; // Window instance.
 		cs_.lpszClass = wcex_.lpszClassName;		// Window class name
 		cs_.lpszName = title_.c_str();	// Window title
-		cs_.style = WS_OVERLAPPED | WS_SYSMENU;		// Window style
+		cs_.style = WS_OVERLAPPEDWINDOW&~WS_MAXIMIZEBOX;		// Window style
 		cs_.lpCreateParams = this;
 
 		hwnd_ = CreateWindowEx(
@@ -79,11 +81,18 @@ namespace ui
 			throw std::runtime_error("could not create window: " + title);
 		}
 
+		//
+		// This prevent the round-rect shape of the overlapped window.
+		//
+		HRGN rgn = CreateRectRgn(0, 0, window_width_, window_height_);
+		SetWindowRgn(hwnd_, rgn, TRUE);
+
 	}
 
 	MainWindow::~MainWindow()
 	{
 		UnregisterClass(title_.c_str(), hinst_);
+		delete gen_btn_;
 	}
 
 	LRESULT CALLBACK MainWindow::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -101,8 +110,7 @@ namespace ui
 					return FALSE;
 			}
 
-			DefWindowProc(hWnd, uMsg, wParam, lParam);
-			break;
+			return DefWindowProc(hWnd, uMsg, wParam, lParam);
 		}
 
 		default:
@@ -122,36 +130,297 @@ namespace ui
 		{
 		case WM_CREATE:
 		{
-			HDC hdc = GetDC(hWnd);
-			auto btn_font = CreateFontUtil(hdc, 14, TEXT("Px437 IBM PS/2thin3"), FW_DONTCARE, false, false, false, 255);
-			ReleaseDC(hWnd, hdc);
-			int btn_width = 90;
-			int btn_height = 36;
-			int window_width = 280;
-			int window_height = 240;
-			hwnd_btn_ = CreateWindow(
-				TEXT("BUTTON"), // predefined class name
-				TEXT("TEST"), // button text 
-				WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON | BS_FLAT | BS_CENTER,  // Styles 
-				((window_width / 2) - (btn_width / 2)), // x position 
-				((window_height / 2) + (btn_height / 2)), // y position 
-				btn_width, // width
-				btn_height, // height
-				hWnd, // parent handle
-				(HMENU)IDC_TEST_BTN,
-				(HINSTANCE)GetWindowLongPtr(hWnd, GWLP_HINSTANCE), // module instance
-				NULL); // lparam, pointer not needed
+			int gen_btn_width = 90;
+			int gen_btn_height = 36;
+			gen_btn_ = new Button("btn", hWnd, KGenBtnId, ((window_width_ / 2) - (gen_btn_width / 2)), ((window_height_ / 2) + (gen_btn_height / 2)), gen_btn_width, gen_btn_height);
 
-			if (!hwnd_btn_)
+			return 0;
+		}
+
+		case WM_COMMAND:
+		{
+			if (LOWORD(wParam) == KGenBtnId)
 			{
-				UnregisterClass(title_.c_str(), hinst_);
-				throw std::runtime_error("could not create window ui element");
+				//MessageBox(NULL, TEXT("Button Pressed!"), TEXT("Debug Message"), MB_OK );
+				if (active_win_ == 1)
+					active_win_ = 0;
+				else
+					active_win_ = 1;
+
+				SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+				SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+			}
+			break;
+		}
+
+		case WM_SIZE:
+		{
+			RECT rect;
+			HRGN rgn;
+			GetWindowRect(hwnd_, &rect);
+			posx_ = rect.left;
+			posy_ = rect.top;
+			window_width_ = rect.right - rect.left;
+			window_height_ = rect.bottom - rect.top;
+			//
+			// I use this to set a rectangular region for the window, and not a round-rect one.
+			//
+			rgn = CreateRectRgn(0, 0, rect.right, rect.bottom);
+			SetWindowRgn(hwnd_, rgn, TRUE);
+			DeleteObject(rgn);
+			return 0;
+		}
+
+		case WM_NCPAINT:
+		{
+			HDC hdc;
+			HRGN rgn = (HRGN)wParam;
+
+			if ((wParam == 0) || (wParam == 1))
+				hdc = GetWindowDC(hWnd);
+			else
+				hdc = GetDCEx(hWnd, (HRGN)wParam, DCX_WINDOW | DCX_CACHE | DCX_LOCKWINDOWUPDATE | DCX_INTERSECTRGN);
+
+			//ValidateRect(hWnd, )
+
+			DrawTitlebar(hWnd, hdc);
+-
+			ReleaseDC(hWnd, hdc);
+			//return DefWindowProc(hWnd, uMsg, wParam, lParam);
+			return 0;
+		}
+
+		case WM_NCACTIVATE:
+		{
+			if (wParam)
+				active_win_ = true;
+			else
+				active_win_ = false;
+
+			SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+			SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+
+			return 0;
+		}
+
+		case WM_ACTIVATE:
+		{
+			if (LOWORD(wParam) == FALSE)
+				ShowWindow(hwnd_, SW_MINIMIZE);
+			else
+				ShowWindow(hwnd_, SW_SHOW);
+
+			//return DefWindowProc(hWnd, uMsg, wParam, lParam);
+			return 0;
+
+		}
+
+		case WM_NCCALCSIZE:
+		{
+			if (!wParam)
+			{
+				RECT* rc = reinterpret_cast<RECT*>(lParam);
+				RECT rcWindow;
+				GetWindowRect(hwnd_, &rcWindow);
+				CopyRect(rc, &rcWindow);
+
+				rc->top += titlebar_offset_;
+				return 0;
+			}
+			else
+			{
+				NCCALCSIZE_PARAMS* ncps = (NCCALCSIZE_PARAMS*)lParam;
+				if (ncps) 
+				{
+					RECT* rc = &ncps->rgrc[0];
+					RECT rcDest{};
+					RECT rcSrc{};
+
+					rc->top += titlebar_offset_;
+				}
+				return 0;
 			}
 		}
+
+		case WM_NCHITTEST:
+		{
+						
+			LRESULT retval = 0;
+			RECT rc;
+			RECT windowRect;
+			POINT pt;
+
+			// Here pt is POINT in screen coordinates
+			pt.x = LOWORD(lParam);
+			pt.y = HIWORD(lParam);
+
+			// Get window RECT in screen coordinates
+			GetWindowRect(hwnd_, &windowRect);
+			CopyRect(&rc, &windowRect);
+
+			// Modify window rect to point on caption
+			rc.bottom = rc.top + titlebar_offset_;
+
+			// Test if point is inside of caption rect
+			if (PtInRect(&rc, pt))
+			{
+				return HTCAPTION;
+			}
+		
+			return HTCLIENT;
+			
+		}
+
+		
 
 		default:
 			return DefWindowProc(hWnd, uMsg, wParam, lParam);
 		}
+
+
 	}
-	
+
+	void MainWindow::DrawTitlebar(HWND hwnd, HDC hdc)
+	{
+
+		RECT rc;
+		GetWindowRect(hwnd, &rc);
+
+		// draw title
+		HBRUSH br = CreateSolidBrush(bg_color_[active_win_]);
+		HBRUSH br_old = reinterpret_cast<HBRUSH>(SelectObject(hdc, br));
+
+		HBRUSH exit_br = CreateSolidBrush(exit_color_[exit_btn_state_]);
+
+		HFONT fnt = CreateFontUtil(hdc, 14, TEXT("Px437 IBM PS/2thin3"), FW_DONTCARE, false, false, false, 255);
+		HFONT fnt_old = reinterpret_cast<HFONT>(SelectObject(hdc, fnt));
+
+		HPEN pen = CreatePen(PS_NULL, 1, RGB(0, 0, 0));
+		HPEN prevPen = (HPEN)SelectObject(hdc, pen);
+
+		Rectangle(hdc, 0, 0, window_width_ - exit_btn_width_, titlebar_offset_ + 1);
+
+		SelectObject(hdc, prevPen);
+
+
+		SetBkMode(hdc, TRANSPARENT);
+
+		TextOut(hdc, 1, 1, title_.c_str(), title_.length());
+
+	//	RECT rect{};
+	//	SetRect(&rect, 0, 0, window_width_-exit_btn_width_, titlebar_offset_);
+	//	FillRect(hdc, &rect, br);
+	//	SetBkMode(hdc, TRANSPARENT);
+	//	DrawText(hdc, title_.c_str(), title_.length(), &rect,DT_LEFT);
+
+	//	SelectObject(hdc, exit_br);
+	//	SetRect(&rect, window_width_ - exit_btn_width_, 0, window_width_, exit_btn_height_);
+	//	FillRect(hdc, &rect, exit_br);
+	//	DrawText(hdc, TEXT("X"), 1, &rect, DT_CENTER);
+
+		SetBkMode(hdc, OPAQUE);
+
+		SelectObject(hdc, br_old);
+		SelectObject(hdc, fnt_old);
+		
+		DeleteObject(pen);
+		DeleteObject(br);
+		DeleteObject(exit_br);
+		DeleteObject(fnt);
+	}
+
+	void MainWindow::TrackMouse(HWND hwnd)
+	{
+		tme_.cbSize = sizeof(TRACKMOUSEEVENT);
+		tme_.dwFlags = TME_NONCLIENT | TME_HOVER; //Type of events to track & trigger.
+		tme_.dwHoverTime = 5000; //How long the mouse has to be in the window to trigger a hover event.
+		tme_.hwndTrack = hwnd;
+		TrackMouseEvent(&tme_);
+	}
+
+	//==================================================
+	// Button 
+	//====================================================
+
+	Button::Button(std::string text, HWND parent, int id, int posx, int posy, int width, int height) : parent_hwnd_(parent), text_(ConvertToTString(text)), id_(id), posx_(posx),
+		posy_(posy), width_(width), height_(height)
+	{
+		HDC hdc = GetDC(parent_hwnd_);
+		auto fnt = CreateFontUtil(hdc, 14, TEXT("Px437 IBM PS/2thin3"), FW_DONTCARE, false, false, false, 255);
+		ReleaseDC(parent_hwnd_, hdc);
+
+		hwnd_ = CreateWindow(
+			TEXT("BUTTON"), // predefined class name
+			text_.c_str(), // button text 
+			WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON | BS_FLAT | BS_CENTER,  // Styles 
+			posx_, // x position 
+			posy_, // y position 
+			width_, // width
+			height_, // height
+			parent_hwnd_, // parent handle
+			(HMENU)id_,
+			(HINSTANCE)GetWindowLongPtr(parent_hwnd_, GWLP_HINSTANCE), // module instance
+			NULL); // lparam, pointer 
+
+
+		//retrieve the previously stored original button window procedure 
+		def_proc_= reinterpret_cast<WNDPROC>(static_cast<LONG_PTR>(SetWindowLongPtr(hwnd_, GWLP_WNDPROC,reinterpret_cast<LONG_PTR>(WndProc))));
+		SetWindowLongPtr(hwnd_, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
+
+		SendMessage(hwnd_, WM_SETFONT, (WPARAM)fnt, TRUE);
+
+		DeleteObject(fnt);
+
+		if (!hwnd_)
+			throw std::runtime_error("could not create button");
+		
+	}
+
+	Button::~Button()
+	{
+
+	}
+
+	LRESULT CALLBACK Button::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	{
+		auto button = reinterpret_cast<Button*>(GetWindowLongPtr(hWnd, GWLP_USERDATA));
+		return button->WndInstProc(hWnd, uMsg, wParam, lParam);
+		
+	}
+
+	LRESULT CALLBACK Button::WndInstProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	{
+		switch (uMsg)
+		{
+
+		[[fallthrough]];
+		case WM_KEYDOWN:
+		{
+			switch (wParam)
+			{
+			case VK_RETURN:
+				//Password = GeneratePassword(KMaxPwdLength);
+				//InvalidateRect(hwndMain, NULL, TRUE);
+				//RedrawWindow(hwndMain, NULL, NULL, RDW_INTERNALPAINT);
+				break;
+			case VK_TAB:
+				SetFocus(parent_hwnd_);
+				break;
+			case VK_SPACE:
+				SendMessage(hwnd_, BM_CLICK, 0, 0);
+				break;
+			case VK_ESCAPE:
+				DestroyWindow(parent_hwnd_);
+				break;
+			}
+		}
+		
+		default:
+			return  def_proc_(hWnd, uMsg, wParam, lParam);
+		}
+
+		return 0;
+	}
+
+
 }
