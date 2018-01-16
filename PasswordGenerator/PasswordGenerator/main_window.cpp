@@ -302,7 +302,6 @@ namespace ui
 			else
 				ShowWindow(hwnd_, SW_SHOW);
 
-			//return DefWindowProc(hWnd, uMsg, wParam, lParam);
 			return 0;
 
 		}
