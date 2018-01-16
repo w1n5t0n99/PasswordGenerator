@@ -2,6 +2,11 @@
 
 #pragma comment (lib, "dwmapi.lib")
 #include <dwmapi.h>
+#pragma comment (lib, "uxtheme.lib")
+#include <uxtheme.h>
+#include <vssym32.h>
+#include <windowsx.h>
+
 
 namespace ui
 {
@@ -10,7 +15,13 @@ namespace ui
 	static HICON hIcon{};
 	static HICON hIcon_small{};
 
+	static const int TOPEXTENDWIDTH = 27;
+	static const int BOTTOMEXTENDWIDTH = 20;
+	static const int LEFTEXTENDWIDTH = 8;
+	static const int RIGHTEXTENDWIDTH = 8;
+
 	void PaintCustomCaption(HWND hWnd, HDC hdc);
+	LRESULT HitTestNCA(HWND hWnd, WPARAM wParam, LPARAM lParam);
 
 	DwmMainWindow::DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height) : 
 		title_(ConvertToTString(title)), hinst_(hinst), posx_(posx), posy_(posy), width_(width), height_(height)
@@ -112,60 +123,96 @@ namespace ui
 
 	LRESULT CALLBACK DwmMainWindow::WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
-		switch (msg)
-		{
+		LRESULT lRet = 0;
+		HRESULT hr = S_OK;
+		bool fCallDWP = true; // Pass on to DefWindowProc?
 
-		case WM_ACTIVATE:
+		fCallDWP = !DwmDefWindowProc(hwnd, msg, wparam, lparam, &lRet);
+
+		// Handle window creation.
+		if (msg == WM_CREATE)
+		{
+			RECT rcClient;
+			GetWindowRect(hwnd, &rcClient);
+
+			// Inform application of the frame change.
+			SetWindowPos(hwnd,
+				NULL,
+				rcClient.left, rcClient.top,
+				rcClient.right - rcClient.left, rcClient.bottom - rcClient.top,
+				SWP_FRAMECHANGED);
+
+			fCallDWP = true;
+			lRet = 0;
+		}
+
+		// Handle window activation.
+		if (msg == WM_ACTIVATE)
 		{
 			// Extend the frame into the client area.
 			MARGINS margins;
 
-			margins.cxLeftWidth = 8;      // 8
-			margins.cxRightWidth = 8;    // 8
-			margins.cyBottomHeight = 20; // 20
-			margins.cyTopHeight = 27;       // 27
+			margins.cxLeftWidth = LEFTEXTENDWIDTH;      // 8
+			margins.cxRightWidth = RIGHTEXTENDWIDTH;    // 8
+			margins.cyBottomHeight = BOTTOMEXTENDWIDTH; // 20
+			margins.cyTopHeight = TOPEXTENDWIDTH;       // 27
 
-			auto hr = DwmExtendFrameIntoClientArea(hwnd, &margins);
+			hr = DwmExtendFrameIntoClientArea(hwnd, &margins);
 
 			if (!SUCCEEDED(hr))
 			{
-				// Handle the error.
+				// Handle error.
 			}
 
-			return 0;
+			fCallDWP = true;
+			lRet = 0;
 		}
 
-		case WM_CREATE:
+		if (msg == WM_PAINT)
 		{
-			RECT rc_client;
-			GetWindowRect(hwnd, &rc_client);
-
-			// Inform the application of the frame change.
-			SetWindowPos(hwnd,
-				NULL,
-				rc_client.left,
-				rc_client.top,
-				rc_client.right - rc_client.left,
-				(rc_client.top - rc_client.bottom) * -1,
-				SWP_FRAMECHANGED);
-
-			return 0;
-		}
-
-		case WM_PAINT:
-		{
-			PAINTSTRUCT ps;
 			HDC hdc;
-			hdc = BeginPaint(hwnd, &ps);
-			PaintCustomCaption(hwnd, hdc);
-			EndPaint(hwnd, &ps);
-			
-			return 0;
-		}
-		
+			{
+				PAINTSTRUCT ps;
+				hdc = BeginPaint(hwnd, &ps);
+				PaintCustomCaption(hwnd, hdc);
+				EndPaint(hwnd, &ps);
+			}
+
+			fCallDWP = true;
+			lRet = 0;
 		}
 
-		return DefWindowProc(hwnd, msg, wparam, lparam);
+		// Handle the non-client size message.
+		if ((msg == WM_NCCALCSIZE) && (wparam == TRUE))
+		{
+			// Calculate new NCCALCSIZE_PARAMS based on custom NCA inset.
+			NCCALCSIZE_PARAMS *pncsp = reinterpret_cast<NCCALCSIZE_PARAMS*>(lparam);
+
+			pncsp->rgrc[0].left = pncsp->rgrc[0].left + 0;
+			pncsp->rgrc[0].top = pncsp->rgrc[0].top + 0;
+			pncsp->rgrc[0].right = pncsp->rgrc[0].right - 0;
+			pncsp->rgrc[0].bottom = pncsp->rgrc[0].bottom - 0;
+
+			lRet = 0;
+
+			// No need to pass the message on to the DefWindowProc.
+			fCallDWP = false;
+		}
+
+		// Handle hit testing in the NCA if not handled by DwmDefWindowProc.
+		if ((msg == WM_NCHITTEST) && (lRet == 0))
+		{
+			lRet = HitTestNCA(hwnd, wparam, lparam);
+
+			if (lRet != HTNOWHERE)
+			{
+				fCallDWP = false;
+			}
+		}
+
+		//*pfCallDWP = fCallDWP;
+
+		return lRet;
 	}
 
 	void PaintCustomCaption(HWND hWnd, HDC hdc)
@@ -179,8 +226,8 @@ namespace ui
 			HDC hdcPaint = CreateCompatibleDC(hdc);
 			if (hdcPaint)
 			{
-				int cx = RECTWIDTH(rcClient);
-				int cy = RECTHEIGHT(rcClient);
+				int cx = rcClient.right - rcClient.left;
+				int cy = (rcClient.top - rcClient.bottom) * -1;
 
 				// Define the BITMAPINFO structure used to draw text.
 				// Note that biHeight is negative. This is done because
@@ -191,7 +238,7 @@ namespace ui
 				dib.bmiHeader.biWidth = cx;
 				dib.bmiHeader.biHeight = -cy;
 				dib.bmiHeader.biPlanes = 1;
-				dib.bmiHeader.biBitCount = BIT_COUNT;
+				dib.bmiHeader.biBitCount = 24;
 				dib.bmiHeader.biCompression = BI_RGB;
 
 				HBITMAP hbm = CreateDIBSection(hdc, &dib, DIB_RGB_COLORS, NULL, NULL, 0);
@@ -212,7 +259,7 @@ namespace ui
 						HFONT hFont = CreateFontIndirect(&lgFont);
 						hFontOld = (HFONT)SelectObject(hdcPaint, hFont);
 					}
-
+					
 					// Draw the title.
 					RECT rcPaint = rcClient;
 					rcPaint.top += 8;
@@ -222,7 +269,7 @@ namespace ui
 					DrawThemeTextEx(hTheme,
 						hdcPaint,
 						0, 0,
-						szTitle,
+						TEXT("Test Title"),
 						-1,
 						DT_LEFT | DT_WORD_ELLIPSIS,
 						&rcPaint,
@@ -244,5 +291,55 @@ namespace ui
 		}
 	}
 
+	// Hit test the frame for resizing and moving.
+	LRESULT HitTestNCA(HWND hWnd, WPARAM wParam, LPARAM lParam)
+	{
+		// Get the point coordinates for the hit test.
+		POINT ptMouse = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
+
+		// Get the window rectangle.
+		RECT rcWindow;
+		GetWindowRect(hWnd, &rcWindow);
+
+		// Get the frame rectangle, adjusted for the style without a caption.
+		RECT rcFrame = { 0 };
+		AdjustWindowRectEx(&rcFrame, WS_OVERLAPPEDWINDOW & ~WS_CAPTION, FALSE, NULL);
+
+		// Determine if the hit test is for resizing. Default middle (1,1).
+		USHORT uRow = 1;
+		USHORT uCol = 1;
+		bool fOnResizeBorder = false;
+
+		// Determine if the point is at the top or bottom of the window.
+		if (ptMouse.y >= rcWindow.top && ptMouse.y < rcWindow.top + TOPEXTENDWIDTH)
+		{
+			fOnResizeBorder = (ptMouse.y < (rcWindow.top - rcFrame.top));
+			uRow = 0;
+		}
+		else if (ptMouse.y < rcWindow.bottom && ptMouse.y >= rcWindow.bottom - BOTTOMEXTENDWIDTH)
+		{
+			uRow = 2;
+		}
+
+		// Determine if the point is at the left or right of the window.
+		if (ptMouse.x >= rcWindow.left && ptMouse.x < rcWindow.left + LEFTEXTENDWIDTH)
+		{
+			uCol = 0; // left side
+		}
+		else if (ptMouse.x < rcWindow.right && ptMouse.x >= rcWindow.right - RIGHTEXTENDWIDTH)
+		{
+			uCol = 2; // right side
+		}
+
+		// Hit test (HTTOPLEFT, ... HTBOTTOMRIGHT)
+		LRESULT hitTests[3][3] =
+		{
+			{ HTTOPLEFT,    fOnResizeBorder ? HTTOP : HTCAPTION,    HTTOPRIGHT },
+		{ HTLEFT,       HTNOWHERE,     HTRIGHT },
+		{ HTBOTTOMLEFT, HTBOTTOM, HTBOTTOMRIGHT },
+		};
+
+		return hitTests[uRow][uCol];
+	}
 
 }
