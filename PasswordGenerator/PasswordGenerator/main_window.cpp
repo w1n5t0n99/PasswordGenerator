@@ -3,6 +3,8 @@
 
 #include "NanoLog.hpp"
 
+#include <windowsx.h>
+
 
 namespace ui
 {
@@ -191,24 +193,94 @@ namespace ui
 
 		case WM_NCMOUSEMOVE:
 		{
-			POINT pt;
-			pt.x = LOWORD(lParam);
-			pt.y = HIWORD(lParam);
-
-			RECT exit_rect{};
-			//window_width_ - exit_btn_width_, 0, exit_btn_width_, titlebar_offset_, exit_color_[exit_btn_state_]
-			exit_rect.bottom = titlebar_offset_ + 1;
-			exit_rect.left = window_width_ - exit_btn_width_;
-			exit_rect.right = window_width_ + 1;
-			exit_rect.top = 0;
-
-			if (exit_btn_state_ == 0)
+			if (!tracking_mouse_)
 			{
-				exit_btn_state_ = 2;
-				SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+				TrackMouse(hWnd);
+				tracking_mouse_ = true;
 			}
 
+			POINT pt;
+			pt.x = GET_X_LPARAM(lParam);
+			pt.y = GET_Y_LPARAM(lParam);
+			ScreenToClient(hWnd, &pt);
+			pt.y *= -1;
+			// check caption buttons
+			RECT exit_rc;
+			SetRect(&exit_rc, window_width_ - exit_btn_width_, 0, window_width_ + 1, titlebar_offset_ + 1);
+
+			int prev_state = exit_btn_state_;
+			if (PtInRect(&exit_rc, pt))
+			{
+				exit_btn_state_ = 2;
+				if (prev_state != exit_btn_state_)
+				{
+
+					SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+					SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+				}
+			}
+			else
+			{
+				exit_btn_state_ = 0;
+				if (prev_state != exit_btn_state_)
+				{
+					SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+					SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+				}
+			}		
+		return 0;
 		}
+
+	
+		case WM_MOUSEMOVE:
+		{
+			if (!tracking_mouse_)
+			{
+				TrackMouse(hWnd);
+				tracking_mouse_ = true;
+			}
+			return 0;
+		}
+		
+		
+		case WM_NCMOUSELEAVE:
+		{
+			// mouse must not be in non client area
+			if (exit_btn_state_ == 2)
+			{
+				if (active_win_)
+					exit_btn_state_ = 0;
+				else
+					exit_btn_state_ = 1;
+
+				SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+				SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+			}
+
+			tracking_mouse_ = false;
+
+			return 0;
+		}
+
+		case WM_MOUSELEAVE:
+		{
+			// mouse must not be in non client area
+			if (exit_btn_state_ == 2)
+			{
+				if (active_win_)
+					exit_btn_state_ = 0;
+				else
+					exit_btn_state_ = 1;
+
+				SendMessage(hwnd_, WM_NCPAINT, NULL, NULL);
+				SendMessage(hwnd_, WM_PAINT, NULL, NULL);
+			}
+
+			tracking_mouse_ = false;
+
+			return 0;
+		}
+		
 
 		case WM_NCACTIVATE:
 		{
@@ -271,8 +343,8 @@ namespace ui
 			POINT pt;
 
 			// Here pt is POINT in screen coordinates
-			pt.x = LOWORD(lParam);
-			pt.y = HIWORD(lParam);
+			pt.x = GET_X_LPARAM(lParam);
+			pt.y = GET_Y_LPARAM(lParam);
 
 			// Get window RECT in screen coordinates
 			GetWindowRect(hwnd_, &windowRect);
@@ -313,7 +385,7 @@ namespace ui
 		SetBkMode(hdc, TRANSPARENT);
 
 		TextOut(hdc, 1, 1, title_.c_str(), title_.length());
-		TextOut(hdc, window_width_ - (exit_btn_width_ / 2), 1, TEXT("X"), 2);
+		TextOut(hdc, window_width_ - 15, 1, TEXT("X"), 2);
 
 
 		SetBkMode(hdc, OPAQUE);
@@ -359,7 +431,7 @@ namespace ui
 	void MainWindow::TrackMouse(HWND hwnd)
 	{
 		tme_.cbSize = sizeof(TRACKMOUSEEVENT);
-		tme_.dwFlags = TME_NONCLIENT | TME_HOVER; //Type of events to track & trigger.
+		tme_.dwFlags = TME_LEAVE | TME_NONCLIENT; //Type of events to track & trigger.
 		tme_.dwHoverTime = 5000; //How long the mouse has to be in the window to trigger a hover event.
 		tme_.hwndTrack = hwnd;
 		TrackMouseEvent(&tme_);
