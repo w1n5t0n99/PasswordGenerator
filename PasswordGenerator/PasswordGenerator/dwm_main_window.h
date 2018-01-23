@@ -17,6 +17,9 @@ namespace ui
 		DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height);
 		~DwmMainWindow();
 
+		void EnableFullscreenBorderless();
+		void DisableFullscreenBorderless();
+
 		HWND GetHandle() { return hwnd_; }
 
 	private:
@@ -32,6 +35,7 @@ namespace ui
 		int posy_{};
 		int width_{};
 		int height_{};		
+		WINDOWPLACEMENT g_wpPrev { sizeof(g_wpPrev) };
 	};
 
 
