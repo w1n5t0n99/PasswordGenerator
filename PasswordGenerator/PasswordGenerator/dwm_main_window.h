@@ -20,6 +20,9 @@ namespace ui
 		void EnableFullscreenBorderless();
 		void DisableFullscreenBorderless();
 
+		void EnableFullscreen();
+		void DisableFullscreen();
+
 		HWND GetHandle() { return hwnd_; }
 
 	private:
