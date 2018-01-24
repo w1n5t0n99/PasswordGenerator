@@ -44,6 +44,8 @@ namespace ui
 		if (!RegisterClassEx(&wcex))
 			throw std::runtime_error("could not register window: " + title);
 
+		cursor_ = wcex.hCursor;
+
 		CREATESTRUCT cs;
 		ZeroMemory(&cs, sizeof(cs));
 		cs.x = posx_;	// Window X position
@@ -121,7 +123,7 @@ namespace ui
 
 	}
 
-	void DwmMainWindow::EnableFullscreenBorderless()
+	void DwmMainWindow::EnableFullscreen()
 	{
 		auto dw_style = GetWindowLong(hwnd_, GWL_STYLE);
 		if (dw_style & WS_OVERLAPPEDWINDOW)
@@ -139,70 +141,55 @@ namespace ui
 		}
 	}
 
-	void DwmMainWindow::DisableFullscreenBorderless()
-	{
-		auto dw_style = GetWindowLong(hwnd_, GWL_STYLE);
-		if (!(dw_style & WS_OVERLAPPEDWINDOW))
-		{
-			SetWindowLong(hwnd_, GWL_STYLE, dw_style | WS_OVERLAPPEDWINDOW);
-			SetWindowPlacement(hwnd_, &g_wpPrev);
-			SetWindowPos(hwnd_, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
-		}
-	}
-
-	void DwmMainWindow::EnableFullscreen()
-	{
-		auto dw_style = GetWindowLong(hwnd_, GWL_STYLE);
-		if (dw_style & WS_OVERLAPPEDWINDOW)
-		{
-			// turn off window region without redraw
-			SetWindowRgn(hwnd_, 0, false);
-
-			DEVMODE fullscreenSettings;
-			// request current screen settings
-			EnumDisplaySettings(NULL, 0, &fullscreenSettings);
-			fullscreenSettings.dmPelsWidth = width_;
-			fullscreenSettings.dmPelsHeight = height_;
-			fullscreenSettings.dmBitsPerPel = 32;
-			fullscreenSettings.dmFields = DM_PELSWIDTH | DM_PELSHEIGHT |DM_BITSPERPEL;
-			// attempt to apply the new settings 
-			auto result = ChangeDisplaySettings(&fullscreenSettings, CDS_FULLSCREEN);
-			// exit if failure, else set datamember to fullscreen and return true
-			if (result != DISP_CHANGE_SUCCESSFUL)
-			{
-				LOG_CRIT << "DISP not successful!";
-				return;
-			}
-			else
-			{
-				// store the location of the window
-				if (!GetWindowPlacement(hwnd_, &g_wpPrev))
-					return;
-				// switch off the title bar
-				SetWindowLong(hwnd_, GWL_STYLE, dw_style & ~WS_OVERLAPPEDWINDOW);
-				// move the window to (0,0)
-				SetWindowPos(hwnd_, HWND_TOPMOST, 0, 0, width_, height_, SWP_SHOWWINDOW);
-				//SetWindowPos(hwnd_, 0, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
-				//InvalidateRect(hwnd_, 0, true);
-				ShowWindow(hwnd_, SW_MAXIMIZE);
-			}
-		}
-	}
-
 	void DwmMainWindow::DisableFullscreen()
 	{
 		auto dw_style = GetWindowLong(hwnd_, GWL_STYLE);
 		if (!(dw_style & WS_OVERLAPPEDWINDOW))
 		{
-			// this resets the screen to the registry-stored values
-			ChangeDisplaySettings(0, 0);
-
 			SetWindowLong(hwnd_, GWL_STYLE, dw_style | WS_OVERLAPPEDWINDOW);
 			SetWindowPlacement(hwnd_, &g_wpPrev);
 			SetWindowPos(hwnd_, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
-
-			InvalidateRect(hwnd_, 0, true);
 		}
 	}
+
+	void DwmMainWindow::Maximize()
+	{
+		ShowWindow(hwnd_, SW_MAXIMIZE);
+	}
+
+	void DwmMainWindow::Minimize()
+	{
+		ShowWindow(hwnd_, SW_MINIMIZE);
+	}
+
+	void DwmMainWindow::SetBorderless()
+	{
+		auto dw_style = GetWindowLongPtr(hwnd_, GWL_STYLE);
+		dw_style &= ~(WS_OVERLAPPEDWINDOW);
+		SetWindowLongPtr(hwnd_, GWL_STYLE, dw_style);
+
+		SetWindowPos(hwnd_, NULL, 0, 0, 0, 0, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER);
+
+	}
+
+	void DwmMainWindow::SetBordered()
+	{
+		auto dw_style = GetWindowLongPtr(hwnd_, GWL_STYLE);
+		dw_style |= WS_OVERLAPPEDWINDOW;
+		SetWindowLongPtr(hwnd_, GWL_STYLE, dw_style);
+
+		SetWindowPos(hwnd_, NULL, 0, 0, 0, 0, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER);
+	}
+
+	void DwmMainWindow::HideCursor()
+	{
+		SetCursor(NULL);
+	}
+
+	void DwmMainWindow::ShowCursor()
+	{
+		SetCursor(cursor_);
+	}
+
 }
 

@@ -17,11 +17,17 @@ namespace ui
 		DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height);
 		~DwmMainWindow();
 
-		void EnableFullscreenBorderless();
-		void DisableFullscreenBorderless();
-
 		void EnableFullscreen();
 		void DisableFullscreen();
+
+		void Maximize();
+		void Minimize();
+
+		void SetBorderless();
+		void SetBordered();
+
+		void HideCursor();
+		void ShowCursor();
 
 		HWND GetHandle() { return hwnd_; }
 
@@ -39,6 +45,7 @@ namespace ui
 		int width_{};
 		int height_{};		
 		WINDOWPLACEMENT g_wpPrev { sizeof(g_wpPrev) };
+		HCURSOR cursor_;
 	};
 
 
