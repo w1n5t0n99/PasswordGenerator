@@ -119,8 +119,41 @@ namespace ui
 
 	LRESULT CALLBACK DwmMainWindow::WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
-		return DefWindowProc(hwnd, msg, wparam, lparam);
+		auto res = DefWindowProc(hwnd, msg, wparam, lparam);
+		switch (msg)
+		{
+		case WM_SETCURSOR:
+			if (hide_cursor_)
+			{
+				auto ht = LOWORD(lparam);
+				if (ht == HTCLIENT)
+				{
+					::SetCursor(NULL);
+					cursor_active_ = false;
+				}
+				else
+				{
+					// @fix - this allows mouse to grab window edges, not sure why!
+					if (!cursor_active_)
+					{
+						::SetCursor(cursor_);
+						cursor_active_ = true;
+					}
+				}
+			}
+			else
+			{
+				if (!cursor_active_)
+				{
+					::SetCursor(cursor_);
+					cursor_active_ = true;
+				}
 
+			}
+			break;
+		}
+
+		return res;
 	}
 
 	void DwmMainWindow::EnableFullscreen()
@@ -183,12 +216,12 @@ namespace ui
 
 	void DwmMainWindow::HideCursor()
 	{
-		SetCursor(NULL);
+		hide_cursor_ = true;
 	}
 
 	void DwmMainWindow::ShowCursor()
 	{
-		SetCursor(cursor_);
+		hide_cursor_ = false;
 	}
 
 }

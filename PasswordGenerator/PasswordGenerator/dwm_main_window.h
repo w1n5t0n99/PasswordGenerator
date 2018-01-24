@@ -45,7 +45,10 @@ namespace ui
 		int width_{};
 		int height_{};		
 		WINDOWPLACEMENT g_wpPrev { sizeof(g_wpPrev) };
+
 		HCURSOR cursor_;
+		bool hide_cursor_{ false };
+		bool cursor_active_{ true };
 	};
 
 
