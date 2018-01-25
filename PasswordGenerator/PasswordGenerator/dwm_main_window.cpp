@@ -119,6 +119,8 @@ namespace ui
 
 	LRESULT CALLBACK DwmMainWindow::WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
+
+
 		return DefWindowProc(hwnd, msg, wparam, lparam);
 
 	}
@@ -189,6 +191,20 @@ namespace ui
 	void DwmMainWindow::ShowCursor()
 	{
 		SetCursor(cursor_);
+	}
+
+	void DwmMainWindow::LockCursor()
+	{
+		RECT rect;
+		::GetClientRect(hwnd_, &rect);
+		::ClientToScreen(hwnd_, (LPPOINT)& rect);
+		::ClientToScreen(hwnd_, (LPPOINT)& rect + 1);
+		::ClipCursor(&rect);
+	}
+
+	void DwmMainWindow::FreeCursor()
+	{
+		::ClipCursor(NULL);
 	}
 
 }

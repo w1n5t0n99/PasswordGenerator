@@ -29,6 +29,9 @@ namespace ui
 		void HideCursor();
 		void ShowCursor();
 
+		void LockCursor();
+		void FreeCursor();
+
 		HWND GetHandle() { return hwnd_; }
 
 	private:
