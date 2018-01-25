@@ -119,7 +119,25 @@ namespace ui
 
 	LRESULT CALLBACK DwmMainWindow::WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
-
+		if (msg == WM_LBUTTONDOWN)
+		{
+			LockCursor();
+			HideCursor();
+			return 0;
+		}
+		else if(msg == WM_RBUTTONDOWN)
+		{
+			FreeCursor();
+			ShowCursor();
+			return 0;
+		}
+		else if (msg == WM_KILLFOCUS)
+		{
+			FreeCursor();
+			//@fix - show cursor increments internal counter, probably not the best solution
+			ShowCursor();
+			return 0;
+		}
 
 		return DefWindowProc(hwnd, msg, wparam, lparam);
 
@@ -185,12 +203,12 @@ namespace ui
 
 	void DwmMainWindow::HideCursor()
 	{
-		SetCursor(NULL);
+		::ShowCursor(false);
 	}
 
 	void DwmMainWindow::ShowCursor()
 	{
-		SetCursor(cursor_);
+		::ShowCursor(true);
 	}
 
 	void DwmMainWindow::LockCursor()
