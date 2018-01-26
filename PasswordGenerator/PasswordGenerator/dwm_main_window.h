@@ -4,12 +4,15 @@
 #define WIN32_LEAN_AND_MEAN
 #endif
 #include <Windows.h>
+#include <ShellScalingAPI.h>
 
 #include "windows_util.h"
 #include "resource.h"
 
 namespace ui
 {
+
+
 
 	class DwmMainWindow
 	{
@@ -31,6 +34,9 @@ namespace ui
 
 		void LockCursor();
 		void FreeCursor();
+
+		void SetHighDpiAware();
+		void SetDpiUnaware();
 
 		HWND GetHandle() { return hwnd_; }
 

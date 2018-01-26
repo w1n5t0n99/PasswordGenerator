@@ -14,6 +14,46 @@ namespace ui
 	static const int LEFTEXTENDWIDTH = 8;
 	static const int RIGHTEXTENDWIDTH = 8;
 
+	namespace dpi_scale
+	{
+		int ScaleValue(int val, int scale_factor)
+		{
+			return MulDiv(val, scale_factor, 100);
+		}
+
+		RECT ScaleRect(const RECT& rect, int scale_factor)
+		{
+			RECT res{};
+			res.bottom = ScaleValue(rect.bottom, scale_factor);
+			res.left = ScaleValue(rect.left, scale_factor);
+			res.top = ScaleValue(rect.top, scale_factor);
+			res.right = ScaleValue(rect.right, scale_factor);
+
+			return res;
+		}
+
+		POINT ScalePoint(const POINT& point, int scale_factor)
+		{
+			POINT res{};
+			res.x = ScaleValue(point.x, scale_factor);
+			res.y = ScaleValue(point.y, scale_factor);
+
+			return res;
+		}
+
+		HFONT CreateScaledFont(HDC hdc, int scale_factor)
+		{
+			HFONT cur_font = reinterpret_cast<HFONT>(GetCurrentObject(hdc, OBJ_FONT));
+			LOGFONT lf;
+			int ret = GetObject(cur_font, sizeof(lf), &lf);
+			// create a scaled version of current font
+			int scaled_font_height = ScaleValue(-lf.lfHeight, scale_factor);
+			lf.lfHeight = -scaled_font_height;
+			return (CreateFontIndirect(&lf));
+		}
+
+	}
+
 
 	DwmMainWindow::DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height) :
 		title_(ConvertToTString(title)), hinst_(hinst), posx_(posx), posy_(posy), width_(width), height_(height)
@@ -221,6 +261,20 @@ namespace ui
 	void DwmMainWindow::FreeCursor()
 	{
 		::ClipCursor(NULL);
+	}
+
+	void DwmMainWindow::SetHighDpiAware()
+	{
+		auto hr = SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
+		if (FAILED(hr))
+			LOG_CRIT << "Setting high DPI awareness failed";
+	}
+
+	void DwmMainWindow::SetDpiUnaware()
+	{
+		auto hr = SetProcessDpiAwareness(PROCESS_DPI_UNAWARE);
+		if (FAILED(hr))
+			LOG_CRIT << "Setting DPI unaware failed";
 	}
 
 }
