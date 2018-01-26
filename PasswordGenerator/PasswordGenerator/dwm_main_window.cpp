@@ -15,7 +15,7 @@ namespace ui
 	static const int RIGHTEXTENDWIDTH = 8;
 
 
-	DwmMainWindow::DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height) : 
+	DwmMainWindow::DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height) :
 		title_(ConvertToTString(title)), hinst_(hinst), posx_(posx), posy_(posy), width_(width), height_(height)
 	{
 		HICON hIcon = static_cast<HICON>(LoadImage(hinst,
@@ -44,8 +44,6 @@ namespace ui
 		if (!RegisterClassEx(&wcex))
 			throw std::runtime_error("could not register window: " + title);
 
-		cursor_ = wcex.hCursor;
-
 		CREATESTRUCT cs;
 		ZeroMemory(&cs, sizeof(cs));
 		cs.x = posx_;	// Window X position
@@ -72,7 +70,7 @@ namespace ui
 			cs.hInstance,
 			cs.lpCreateParams);
 
-		GetWindowPlacement(hwnd_, &g_wpPrev);
+		GetWindowPlacement(hwnd_, &wp_prev_);
 
 		if (!hwnd_)
 		{
@@ -119,41 +117,28 @@ namespace ui
 
 	LRESULT CALLBACK DwmMainWindow::WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
-		auto res = DefWindowProc(hwnd, msg, wparam, lparam);
-		switch (msg)
+		if (msg == WM_LBUTTONDOWN)
 		{
-		case WM_SETCURSOR:
-			if (hide_cursor_)
-			{
-				auto ht = LOWORD(lparam);
-				if (ht == HTCLIENT)
-				{
-					::SetCursor(NULL);
-					cursor_active_ = false;
-				}
-				else
-				{
-					// @fix - this allows mouse to grab window edges, not sure why!
-					if (!cursor_active_)
-					{
-						::SetCursor(cursor_);
-						cursor_active_ = true;
-					}
-				}
-			}
-			else
-			{
-				if (!cursor_active_)
-				{
-					::SetCursor(cursor_);
-					cursor_active_ = true;
-				}
-
-			}
-			break;
+			LockCursor();
+			HideCursor();
+			return 0;
+		}
+		else if (msg == WM_RBUTTONDOWN)
+		{
+			FreeCursor();
+			ShowCursor();
+			return 0;
+		}
+		else if (msg == WM_KILLFOCUS)
+		{
+			FreeCursor();
+			//@fix - show cursor increments internal counter, probably not the best solution
+			ShowCursor();
+			return 0;
 		}
 
-		return res;
+		return DefWindowProc(hwnd, msg, wparam, lparam);
+
 	}
 
 	void DwmMainWindow::EnableFullscreen()
@@ -162,7 +147,7 @@ namespace ui
 		if (dw_style & WS_OVERLAPPEDWINDOW)
 		{
 			MONITORINFO mi = { sizeof(mi) };
-			if (GetWindowPlacement(hwnd_, &g_wpPrev) && GetMonitorInfo(MonitorFromWindow(hwnd_, MONITOR_DEFAULTTOPRIMARY), &mi))
+			if (GetWindowPlacement(hwnd_, &wp_prev_) && GetMonitorInfo(MonitorFromWindow(hwnd_, MONITOR_DEFAULTTOPRIMARY), &mi))
 			{
 				SetWindowLong(hwnd_, GWL_STYLE, dw_style & ~WS_OVERLAPPEDWINDOW);
 				SetWindowPos(hwnd_, HWND_TOP,
@@ -180,7 +165,7 @@ namespace ui
 		if (!(dw_style & WS_OVERLAPPEDWINDOW))
 		{
 			SetWindowLong(hwnd_, GWL_STYLE, dw_style | WS_OVERLAPPEDWINDOW);
-			SetWindowPlacement(hwnd_, &g_wpPrev);
+			SetWindowPlacement(hwnd_, &wp_prev_);
 			SetWindowPos(hwnd_, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
 		}
 	}
@@ -216,12 +201,26 @@ namespace ui
 
 	void DwmMainWindow::HideCursor()
 	{
-		hide_cursor_ = true;
+		::ShowCursor(false);
 	}
 
 	void DwmMainWindow::ShowCursor()
 	{
-		hide_cursor_ = false;
+		::ShowCursor(true);
+	}
+
+	void DwmMainWindow::LockCursor()
+	{
+		RECT rect;
+		::GetClientRect(hwnd_, &rect);
+		::ClientToScreen(hwnd_, (LPPOINT)& rect);
+		::ClientToScreen(hwnd_, (LPPOINT)& rect + 1);
+		::ClipCursor(&rect);
+	}
+
+	void DwmMainWindow::FreeCursor()
+	{
+		::ClipCursor(NULL);
 	}
 
 }

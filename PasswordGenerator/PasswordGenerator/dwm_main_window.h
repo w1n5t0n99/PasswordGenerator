@@ -29,6 +29,9 @@ namespace ui
 		void HideCursor();
 		void ShowCursor();
 
+		void LockCursor();
+		void FreeCursor();
+
 		HWND GetHandle() { return hwnd_; }
 
 	private:
@@ -36,19 +39,15 @@ namespace ui
 		LRESULT CALLBACK WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 		tstring title_{};
-		HINSTANCE hinst_{NULL};
+		HINSTANCE hinst_{ NULL };
 		HWND hwnd_{ NULL };
 		bool tracking_mouse_{ false };
 
 		int posx_{};
 		int posy_{};
 		int width_{};
-		int height_{};		
-		WINDOWPLACEMENT g_wpPrev { sizeof(g_wpPrev) };
-
-		HCURSOR cursor_;
-		bool hide_cursor_{ false };
-		bool cursor_active_{ true };
+		int height_{};
+		WINDOWPLACEMENT wp_prev_{ sizeof(wp_prev_) };
 	};
 
 
