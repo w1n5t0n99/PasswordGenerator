@@ -4,7 +4,6 @@
 #define WIN32_LEAN_AND_MEAN
 #endif
 #include <Windows.h>
-#include <ShellScalingAPI.h>
 
 #include "windows_util.h"
 #include "resource.h"

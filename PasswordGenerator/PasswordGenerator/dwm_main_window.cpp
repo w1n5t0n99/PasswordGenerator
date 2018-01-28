@@ -2,6 +2,9 @@
 
 #include "NanoLog.hpp"
 
+#include <ShellScalingApi.h>
+#pragma comment(lib, "Shcore.lib")
+
 namespace ui
 {
 	//@cleanup - remove static variables
@@ -14,50 +17,67 @@ namespace ui
 	static const int LEFTEXTENDWIDTH = 8;
 	static const int RIGHTEXTENDWIDTH = 8;
 
-	namespace dpi_scale
+	namespace dpi
 	{
-		int ScaleValue(int val, int scale_factor)
+		class Scaler
 		{
-			return MulDiv(val, scale_factor, 100);
-		}
+		public:
+			Scaler() : scale_factor_(0) {};
 
-		RECT ScaleRect(const RECT& rect, int scale_factor)
-		{
-			RECT res{};
-			res.bottom = ScaleValue(rect.bottom, scale_factor);
-			res.left = ScaleValue(rect.left, scale_factor);
-			res.top = ScaleValue(rect.top, scale_factor);
-			res.right = ScaleValue(rect.right, scale_factor);
+			void SetScaleFactor(int dpi)
+			{
+				//windows assumes dpi of 96 for dpi unaware
+				scale_factor_ = MulDiv(dpi, 100, 96);
+			}
 
-			return res;
-		}
+			int GetScaleFactor() { return scale_factor_; }
 
-		POINT ScalePoint(const POINT& point, int scale_factor)
-		{
-			POINT res{};
-			res.x = ScaleValue(point.x, scale_factor);
-			res.y = ScaleValue(point.y, scale_factor);
+			int ScaleValue(int value) { return MulDiv(value, scale_factor_, 100); }
 
-			return res;
-		}
+			RECT ScaleRect(const RECT& rect)
+			{
+				RECT res{};
+				res.bottom = ScaleValue(rect.bottom);
+				res.left = ScaleValue(rect.left);
+				res.top = ScaleValue(rect.top);
+				res.right = ScaleValue(rect.right);
 
-		HFONT CreateScaledFont(HDC hdc, int scale_factor)
-		{
-			HFONT cur_font = reinterpret_cast<HFONT>(GetCurrentObject(hdc, OBJ_FONT));
-			LOGFONT lf;
-			int ret = GetObject(cur_font, sizeof(lf), &lf);
-			// create a scaled version of current font
-			int scaled_font_height = ScaleValue(-lf.lfHeight, scale_factor);
-			lf.lfHeight = -scaled_font_height;
-			return (CreateFontIndirect(&lf));
-		}
+				return res;
+			}
+
+			POINT ScalePoint(const POINT& point)
+			{
+				POINT res{};
+				res.x = ScaleValue(point.x);
+				res.y = ScaleValue(point.y);
+
+				return res;
+			}
+
+			HFONT CreateScaledFont(HDC hdc, int point_size, tstring font, int font_weight, bool italic, bool underline, bool strikeout, int char_set)
+			{
+				int scaled_point_size = ScaleValue(point_size);
+				//	int lf_height = -MulDiv(scaled_point_size, GetDeviceCaps(hdc, LOGPIXELSY), 72);
+				HFONT hf = CreateFont(-scaled_point_size, 0, 0, 0, font_weight, italic, underline, strikeout, char_set, 0, 0, 0, 0, font.c_str());
+				return hf;
+			}
+			
+
+		private:
+			int scale_factor_;
+		};
 
 	}
+
+
 
 
 	DwmMainWindow::DwmMainWindow(std::string title, HINSTANCE hinst, int posx, int posy, int width, int height) :
 		title_(ConvertToTString(title)), hinst_(hinst), posx_(posx), posy_(posy), width_(width), height_(height)
 	{
+
+		SetHighDpiAware();
+
 		HICON hIcon = static_cast<HICON>(LoadImage(hinst,
 			MAKEINTRESOURCE(IDI_ICON1),
 			IMAGE_ICON,
@@ -69,6 +89,22 @@ namespace ui
 			IMAGE_ICON,
 			16, 16,
 			LR_DEFAULTCOLOR));
+
+		dpi::Scaler scaler{};
+		UINT     dpiX = 0, dpiY = 0;
+		// Get the DPI for the main monitor, and set the scaling factor
+		POINT point{};
+		point.x = 1;
+		point.y = 1;
+		auto hMonitor = MonitorFromPoint(point, MONITOR_DEFAULTTONEAREST);
+		auto hr = GetDpiForMonitor(hMonitor, MDT_EFFECTIVE_DPI, &dpiX, &dpiY);
+		scaler.SetScaleFactor(dpiX);
+		posx_ = scaler.ScaleValue(posx);
+		posy_ = scaler.ScaleValue(posy);
+		width_ = scaler.ScaleValue(width);
+		height_ = scaler.ScaleValue(height);
+
+		LOG_INFO << "Monitor DPI: " << dpiX << "Scaled Width: " << width_;
 
 		WNDCLASSEX wcex;
 		ZeroMemory(&wcex, sizeof(wcex));
@@ -117,6 +153,7 @@ namespace ui
 			UnregisterClass(title_.c_str(), hinst_);
 			throw std::runtime_error("could not create window: " + title);
 		}
+
 	}
 
 	DwmMainWindow::~DwmMainWindow()
