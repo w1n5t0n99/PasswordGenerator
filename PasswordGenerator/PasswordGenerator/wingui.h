@@ -73,10 +73,12 @@ namespace wingui
 		};
 
 		using TDPI_AWARENESS_CONTEXT = HANDLE;
-		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_UNAWARE = ((DPI_AWARENESS_CONTEXT)-1);
-		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_SYSTEM_AWARE = ((DPI_AWARENESS_CONTEXT)-2);
-		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = ((DPI_AWARENESS_CONTEXT)-3);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_UNAWARE = ((TDPI_AWARENESS_CONTEXT)-1);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_SYSTEM_AWARE = ((TDPI_AWARENESS_CONTEXT)-2);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = ((TDPI_AWARENESS_CONTEXT)-3);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = ((TDPI_AWARENESS_CONTEXT)-4);
 
+		
 		typedef enum _PROCESS_DPI_AWARENESS
 		{
 			PROCESS_DPI_UNAWARE = 0,
@@ -93,14 +95,14 @@ namespace wingui
 		} DPI_AWARENESS;
 		
 		// min supported Windows 10, version 1607
-		using SetThreadDpiAwarenessContextPtr = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(_In_  DPI_AWARENESS_CONTEXT  dpiContext)>;
+		using PTRSETHREADDPIAWARENESSCONTEXT = std::add_pointer_t<DPI_AWARENESS_CONTEXT(_In_  TDPI_AWARENESS_CONTEXT  dpiContext)>;
 		using GetThreadDpiAwarenessContextPtr = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(void)>;
 		using GetDpiForWindowPtr = std::add_pointer_t<UINT(_In_ HWND hwnd)>;
 		using GetDpiForSystemPtr = std::add_pointer_t<UINT(void)>;
 		using EnableNonClientDpiScalingPtr = std::add_pointer_t<BOOL(_In_ HWND hwnd)>;
-		using GetAwarenessFromDpiAwarenessContextPtr = std::add_pointer_t<DPI_AWARENESS(_In_ DPI_AWARENESS_CONTEXT value)>;
+		using GetAwarenessFromDpiAwarenessContextPtr = std::add_pointer_t<DPI_AWARENESS(_In_ TDPI_AWARENESS_CONTEXT value)>;
 
-		SetThreadDpiAwarenessContextPtr SetThreadDpiAwarenessContext;
+		PTRSETHREADDPIAWARENESSCONTEXT SetThreadDpiAwarenessContext;
 		GetThreadDpiAwarenessContextPtr GetThreadDpiAwarenessContext;
 		GetDpiForWindowPtr GetDpiForWindow;
 		GetDpiForSystemPtr GetDpiForSystem;
@@ -119,15 +121,16 @@ namespace wingui
 		SupportedVersion InitDpiSupport()
 		{
 			HMODULE shcore = LoadLibraryW(L"Shcore");
+			HMODULE user32 = LoadLibraryW(L"user32");
 			if(!shcore)
 				return SupportedVersion::Invalid;
 
-			SetThreadDpiAwarenessContext = reinterpret_cast<decltype(SetThreadDpiAwarenessContext)>(GetProcAddress(shcore, "SetThreadDpiAwarenessContext"));
-			GetThreadDpiAwarenessContext = reinterpret_cast<decltype(GetThreadDpiAwarenessContext)>(GetProcAddress(shcore, "GetThreadDpiAwarenessContext"));
-			GetDpiForWindow = reinterpret_cast<decltype(GetDpiForWindow)>(GetProcAddress(shcore, "GetDpiForWindow"));
-			GetDpiForSystem = reinterpret_cast<decltype(GetDpiForSystem)>(GetProcAddress(shcore, "GetDpiForSystem"));
-			EnableNonClientDpiScaling = reinterpret_cast<decltype(EnableNonClientDpiScaling)>(GetProcAddress(shcore, "EnableNonClientDpiScaling"));
-			GetAwarenessFromDpiAwarenessContext = reinterpret_cast<decltype(GetAwarenessFromDpiAwarenessContext)>(GetProcAddress(shcore, "GetAwarenessFromDpiAwarenessContext"));
+			SetThreadDpiAwarenessContext = reinterpret_cast<decltype(SetThreadDpiAwarenessContext)>(GetProcAddress(user32, "SetThreadDpiAwarenessContext"));
+			GetThreadDpiAwarenessContext = reinterpret_cast<decltype(GetThreadDpiAwarenessContext)>(GetProcAddress(user32, "GetThreadDpiAwarenessContext"));
+			GetDpiForWindow = reinterpret_cast<decltype(GetDpiForWindow)>(GetProcAddress(user32, "GetDpiForWindow"));
+			GetDpiForSystem = reinterpret_cast<decltype(GetDpiForSystem)>(GetProcAddress(user32, "GetDpiForSystem"));
+			EnableNonClientDpiScaling = reinterpret_cast<decltype(EnableNonClientDpiScaling)>(GetProcAddress(user32, "EnableNonClientDpiScaling"));
+			GetAwarenessFromDpiAwarenessContext = reinterpret_cast<decltype(GetAwarenessFromDpiAwarenessContext)>(GetProcAddress(user32, "GetAwarenessFromDpiAwarenessContext"));
 
 			SetProcessDpiAwareness = reinterpret_cast<decltype(SetProcessDpiAwareness)>(GetProcAddress(shcore, "SetProcessDpiAwareness"));
 			GetProcessDpiAwareness = reinterpret_cast<decltype(GetProcessDpiAwareness)>(GetProcAddress(shcore, "GetProcessDpiAwareness"));

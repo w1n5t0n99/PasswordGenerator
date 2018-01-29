@@ -1,4 +1,4 @@
-[1970-01-01 02:23:01.298617][INFO][3008][dwm_main_window.cpp:DwmMainWindow:107] Monitor DPI: 96Scaled Width: 300
-[1970-01-01 02:23:01.331949][INFO][3008][PasswordGenerator.cpp:WinMain:70] Per Monitor Supported!
-[1970-01-01 02:23:01.331951][INFO][3008][PasswordGenerator.cpp:WinMain:80] Result found!
-[1970-01-01 02:23:01.331952][INFO][3008][PasswordGenerator.cpp:WinMain:86] Per monitor aware
+[1970-01-18 21:55:12.004984][INFO][7340][dwm_main_window.cpp:DwmMainWindow:107] Monitor DPI: 96Scaled Width: 300
+[1970-01-18 21:55:12.055589][INFO][7340][PasswordGenerator.cpp:WinMain:68] Per Monitor V2 Supported!
+[1970-01-18 21:55:12.055598][INFO][7340][PasswordGenerator.cpp:WinMain:82] Result found!
+[1970-01-18 21:55:12.055598][INFO][7340][PasswordGenerator.cpp:WinMain:88] Per monitor aware
