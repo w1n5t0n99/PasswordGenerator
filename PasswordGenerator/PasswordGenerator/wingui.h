@@ -90,15 +90,6 @@ namespace wingui
 		std::bitset<8> wnd_flags_;
 		WINDOWPLACEMENT wp_prev_{ sizeof(wp_prev_) };
 
-		struct DpiInfo
-		{
-			DPI_AWARENESS awareness;
-			DPI_AWARENESS_CONTEXT context;
-		};
-
-		DpiInfo dpi_info_;
-
-
 	};
 
 	LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
@@ -131,45 +122,36 @@ namespace wingui
 		}
 	}
 
+	//================================================
+	// Set dpi awareness based on flag value
+	//================================================
 	bool MainWindow::SetDpiAwareness()
 	{
+
+
 		if ((wnd_flags_ & KDPIAWARE).none())
 		{
 			auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_UNAWARE);
-			// Get the DPI awareness of the window from the DPI-awareness context of the thread
-			auto dpi_awareness_context = GetThreadDpiAwarenessContext();
-			auto dpi_awareness = GetAwarenessFromDpiAwarenessContext(dpi_awareness_context);
-			// unaware should be compatible with all versions
-			dpi_info_.awareness = dpi_awareness;
-			dpi_info_.context = dpi_awareness_context;
 			return true;
 		}
 		else
 		{
+			/* DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 is only compatible after Win10 creators update,
+			   try DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE if invalid
+			*/
 			if (auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2))
 			{
-				auto dpi_awareness_context = GetThreadDpiAwarenessContext();
-				auto dpi_awareness = GetAwarenessFromDpiAwarenessContext(dpi_awareness_context);
-				dpi_info_.awareness = dpi_awareness;
-				dpi_info_.context = dpi_awareness_context;
 				return true;
 			}
 			else if (auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE))
 			{
 				EnableNonClientDpiScaling(hwnd_);
-				auto dpi_awareness_context = GetThreadDpiAwarenessContext();
-				auto dpi_awareness = GetAwarenessFromDpiAwarenessContext(dpi_awareness_context);
-				dpi_info_.awareness = dpi_awareness;
-				dpi_info_.context = dpi_awareness_context;
 				return true;
 			}
 			else
 			{
 				// pre windows 8, windows must handle dpi scaling
-				auto dpi_awareness_context = GetThreadDpiAwarenessContext();
-				auto dpi_awareness = GetAwarenessFromDpiAwarenessContext(dpi_awareness_context);
-				dpi_info_.awareness = dpi_awareness;
-				dpi_info_.context = dpi_awareness_context;
+				SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_SYSTEM_AWARE);
 				return false;
 			}
 		}
