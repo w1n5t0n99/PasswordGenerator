@@ -72,6 +72,8 @@ namespace wingui
 			PerMonitorDpiAwareV2
 		};
 
+		UINT MSG_DPICHANGED = 0x02E0;
+
 		using TDPI_AWARENESS_CONTEXT = HANDLE;
 		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_UNAWARE = ((TDPI_AWARENESS_CONTEXT)-1);
 		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_SYSTEM_AWARE = ((TDPI_AWARENESS_CONTEXT)-2);
@@ -93,36 +95,48 @@ namespace wingui
 			DPI_AWARENESS_SYSTEM_AWARE = 1,
 			DPI_AWARENESS_PER_MONITOR_AWARE = 2
 		} DPI_AWARENESS;
+
+		typedef enum _MONITOR_DPI_TYPE
+		{
+			MDT_EFFECTIVE_DPI = 0,
+			MDT_ANGULAR_DPI = 1,
+			MDT_RAW_DPI = 2,
+			MDT_DEFAULT = MDT_EFFECTIVE_DPI
+		} MONITOR_DPI_TYPE;
 		
 		// min supported Windows 10, version 1607
 		using PTRSETHREADDPIAWARENESSCONTEXT = std::add_pointer_t<DPI_AWARENESS_CONTEXT(_In_  TDPI_AWARENESS_CONTEXT  dpiContext)>;
-		using GetThreadDpiAwarenessContextPtr = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(void)>;
-		using GetDpiForWindowPtr = std::add_pointer_t<UINT(_In_ HWND hwnd)>;
-		using GetDpiForSystemPtr = std::add_pointer_t<UINT(void)>;
-		using EnableNonClientDpiScalingPtr = std::add_pointer_t<BOOL(_In_ HWND hwnd)>;
-		using GetAwarenessFromDpiAwarenessContextPtr = std::add_pointer_t<DPI_AWARENESS(_In_ TDPI_AWARENESS_CONTEXT value)>;
+		using PTRGETTHREADDPIAWARENESSCONTEXT = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(void)>;
+		using PTRGETDPIFORWINDOW = std::add_pointer_t<UINT(_In_ HWND hwnd)>;
+		using PTRGETDPIFORSYSTEM = std::add_pointer_t<UINT(void)>;
+		using PTRENABLENONCLIENTDPISCALING = std::add_pointer_t<BOOL(_In_ HWND hwnd)>;
+		using PTRGETAWARENESSFROMDPIAWARENESSCONTEXT = std::add_pointer_t<DPI_AWARENESS(_In_ TDPI_AWARENESS_CONTEXT value)>;
+		using PTRAREDPIAWARENESSCONTEXTSEQUAL = std::add_pointer_t < BOOL(_In_ TDPI_AWARENESS_CONTEXT dpiContextA, _In_ TDPI_AWARENESS_CONTEXT dpiContextB)>;
+		using PTRGETWINDOWDPIAWARENESSCONTEXT = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(_In_ HWND hwnd)>;
 
 		PTRSETHREADDPIAWARENESSCONTEXT SetThreadDpiAwarenessContext;
-		GetThreadDpiAwarenessContextPtr GetThreadDpiAwarenessContext;
-		GetDpiForWindowPtr GetDpiForWindow;
-		GetDpiForSystemPtr GetDpiForSystem;
-		EnableNonClientDpiScalingPtr EnableNonClientDpiScaling;
-		GetAwarenessFromDpiAwarenessContextPtr GetAwarenessFromDpiAwarenessContext;
+		PTRGETTHREADDPIAWARENESSCONTEXT GetThreadDpiAwarenessContext;
+		PTRGETDPIFORWINDOW GetDpiForWindow;
+		PTRGETDPIFORSYSTEM GetDpiForSystem;
+		PTRENABLENONCLIENTDPISCALING EnableNonClientDpiScaling;
+		PTRGETAWARENESSFROMDPIAWARENESSCONTEXT GetAwarenessFromDpiAwarenessContext;
+		PTRAREDPIAWARENESSCONTEXTSEQUAL GetWindowDpiAwarenessContext;
+		PTRAREDPIAWARENESSCONTEXTSEQUAL AreDpiAwarenessContextsEqual;
 
 		// min supported Windows 8.1
-		using SetProcessDpiAwarenessPtr = std::add_pointer_t<HRESULT(_In_ PROCESS_DPI_AWARENESS value)>;
-		using GetProcessDpiAwarenessPtr = std::add_pointer_t<HRESULT(_In_ HANDLE hprocess, _Out_ PROCESS_DPI_AWARENESS *value)>;
-		using GetDpiForMonitorPtr = std::add_pointer_t<HRESULT(_In_ HMONITOR hmonitor,_In_  MONITOR_DPI_TYPE dpiType, _Out_ UINT *dpiX, _Out_ UINT *dpiY)>;
+		using PTRSETPROCESSDPIAWARENESS = std::add_pointer_t<HRESULT(_In_ PROCESS_DPI_AWARENESS value)>;
+		using PTRGETPROCESSDPIAWARENESS = std::add_pointer_t<HRESULT(_In_ HANDLE hprocess, _Out_ PROCESS_DPI_AWARENESS *value)>;
+		using PTRGETDPIFORMONITOR = std::add_pointer_t<HRESULT(_In_ HMONITOR hmonitor,_In_  MONITOR_DPI_TYPE dpiType, _Out_ UINT *dpiX, _Out_ UINT *dpiY)>;
 
-		SetProcessDpiAwarenessPtr SetProcessDpiAwareness;
-		GetProcessDpiAwarenessPtr GetProcessDpiAwareness;
-		GetDpiForMonitorPtr GetDpiForMonitor;
+		PTRSETPROCESSDPIAWARENESS SetProcessDpiAwareness;
+		PTRGETPROCESSDPIAWARENESS GetProcessDpiAwareness;
+		PTRGETDPIFORMONITOR GetDpiForMonitor;
 
 		SupportedVersion InitDpiSupport()
 		{
 			HMODULE shcore = LoadLibraryW(L"Shcore");
 			HMODULE user32 = LoadLibraryW(L"user32");
-			if(!shcore)
+			if(!shcore || !user32)
 				return SupportedVersion::Invalid;
 
 			SetThreadDpiAwarenessContext = reinterpret_cast<decltype(SetThreadDpiAwarenessContext)>(GetProcAddress(user32, "SetThreadDpiAwarenessContext"));
@@ -131,6 +145,8 @@ namespace wingui
 			GetDpiForSystem = reinterpret_cast<decltype(GetDpiForSystem)>(GetProcAddress(user32, "GetDpiForSystem"));
 			EnableNonClientDpiScaling = reinterpret_cast<decltype(EnableNonClientDpiScaling)>(GetProcAddress(user32, "EnableNonClientDpiScaling"));
 			GetAwarenessFromDpiAwarenessContext = reinterpret_cast<decltype(GetAwarenessFromDpiAwarenessContext)>(GetProcAddress(user32, "GetAwarenessFromDpiAwarenessContext"));
+			AreDpiAwarenessContextsEqual = reinterpret_cast<decltype(AreDpiAwarenessContextsEqual)>(GetProcAddress(user32, "AreDpiAwarenessContextsEqual"));
+			GetWindowDpiAwarenessContext = reinterpret_cast<decltype(GetWindowDpiAwarenessContext)>(GetProcAddress(user32, "GetWindowDpiAwarenessContext"));
 
 			SetProcessDpiAwareness = reinterpret_cast<decltype(SetProcessDpiAwareness)>(GetProcAddress(shcore, "SetProcessDpiAwareness"));
 			GetProcessDpiAwareness = reinterpret_cast<decltype(GetProcessDpiAwareness)>(GetProcAddress(shcore, "GetProcessDpiAwareness"));
