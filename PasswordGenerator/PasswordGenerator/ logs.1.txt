@@ -1,1 +1,4 @@
-[1970-01-10 01:01:02.824815][INFO][11284][dwm_main_window.cpp:DwmMainWindow:107] Monitor DPI: 120Scaled Width: 375
+[1970-01-01 02:23:01.298617][INFO][3008][dwm_main_window.cpp:DwmMainWindow:107] Monitor DPI: 96Scaled Width: 300
+[1970-01-01 02:23:01.331949][INFO][3008][PasswordGenerator.cpp:WinMain:70] Per Monitor Supported!
+[1970-01-01 02:23:01.331951][INFO][3008][PasswordGenerator.cpp:WinMain:80] Result found!
+[1970-01-01 02:23:01.331952][INFO][3008][PasswordGenerator.cpp:WinMain:86] Per monitor aware

@@ -7,12 +7,10 @@
 #include <string>
 #include <bitset>
 #include <ShellScalingApi.h>
-#pragma comment(lib, "Shcore.lib")
+//#pragma comment(lib, "Shcore.lib")
 
 namespace wingui
 {
-
-	static const std::bitset<8> KDPIAWARE = 0b00000001;
 
 	class DpiScaler
 	{
@@ -63,101 +61,85 @@ namespace wingui
 		int scale_factor_;
 	};
 
-
-	class MainWindow
+	namespace dpi
 	{
-	public:
-		MainWindow(std::string title, int posx, int posy, int width, int height, std::bitset<8> wnd_flags);
-		~MainWindow();
+		enum class SupportedVersion
+		{
+			Invalid,
+			DpiUnaware,
+			SystemDpiAware,
+			PerMonitorDpiAware,
+			PerMonitorDpiAwareV2
+		};
+
+		using TDPI_AWARENESS_CONTEXT = HANDLE;
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_UNAWARE = ((DPI_AWARENESS_CONTEXT)-1);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_SYSTEM_AWARE = ((DPI_AWARENESS_CONTEXT)-2);
+		TDPI_AWARENESS_CONTEXT KDPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = ((DPI_AWARENESS_CONTEXT)-3);
+
+		typedef enum _PROCESS_DPI_AWARENESS
+		{
+			PROCESS_DPI_UNAWARE = 0,
+			PROCESS_SYSTEM_DPI_AWARE = 1,
+			PROCESS_PER_MONITOR_DPI_AWARE = 2
+		} PROCESS_DPI_AWARENESS;
+
+		typedef enum _DPI_AWARENESS
+		{
+			DPI_AWARENESS_INVALID = -1,
+			DPI_AWARENESS_UNAWARE = 0,
+			DPI_AWARENESS_SYSTEM_AWARE = 1,
+			DPI_AWARENESS_PER_MONITOR_AWARE = 2
+		} DPI_AWARENESS;
 		
-	private:
-		static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
-		LRESULT CALLBACK WndInstProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
+		// min supported Windows 10, version 1607
+		using SetThreadDpiAwarenessContextPtr = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(_In_  DPI_AWARENESS_CONTEXT  dpiContext)>;
+		using GetThreadDpiAwarenessContextPtr = std::add_pointer_t<TDPI_AWARENESS_CONTEXT(void)>;
+		using GetDpiForWindowPtr = std::add_pointer_t<UINT(_In_ HWND hwnd)>;
+		using GetDpiForSystemPtr = std::add_pointer_t<UINT(void)>;
+		using EnableNonClientDpiScalingPtr = std::add_pointer_t<BOOL(_In_ HWND hwnd)>;
+		using GetAwarenessFromDpiAwarenessContextPtr = std::add_pointer_t<DPI_AWARENESS(_In_ DPI_AWARENESS_CONTEXT value)>;
 
-		bool SetDpiAwareness();
+		SetThreadDpiAwarenessContextPtr SetThreadDpiAwarenessContext;
+		GetThreadDpiAwarenessContextPtr GetThreadDpiAwarenessContext;
+		GetDpiForWindowPtr GetDpiForWindow;
+		GetDpiForSystemPtr GetDpiForSystem;
+		EnableNonClientDpiScalingPtr EnableNonClientDpiScaling;
+		GetAwarenessFromDpiAwarenessContextPtr GetAwarenessFromDpiAwarenessContext;
 
-		int ProcessDpiMessages(MSG msg);
+		// min supported Windows 8.1
+		using SetProcessDpiAwarenessPtr = std::add_pointer_t<HRESULT(_In_ PROCESS_DPI_AWARENESS value)>;
+		using GetProcessDpiAwarenessPtr = std::add_pointer_t<HRESULT(_In_ HANDLE hprocess, _Out_ PROCESS_DPI_AWARENESS *value)>;
+		using GetDpiForMonitorPtr = std::add_pointer_t<HRESULT(_In_ HMONITOR hmonitor,_In_  MONITOR_DPI_TYPE dpiType, _Out_ UINT *dpiX, _Out_ UINT *dpiY)>;
 
+		SetProcessDpiAwarenessPtr SetProcessDpiAwareness;
+		GetProcessDpiAwarenessPtr GetProcessDpiAwareness;
+		GetDpiForMonitorPtr GetDpiForMonitor;
 
-		std::string title_{};
-		HINSTANCE hinst_{ NULL };
-		HWND hwnd_{ NULL };
-
-		int posx_{};
-		int posy_{};
-		int width_{};
-		int height_{};
-		std::bitset<8> wnd_flags_;
-		WINDOWPLACEMENT wp_prev_{ sizeof(wp_prev_) };
-
-	};
-
-	LRESULT CALLBACK MainWindow::WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
-	{
-		switch (msg)
+		SupportedVersion InitDpiSupport()
 		{
-		case WM_NCCREATE:
-		{
-			// set class instance as gwlp_userdata
-			CREATESTRUCT * pcs = (CREATESTRUCT*)lparam;
-			auto main_window = reinterpret_cast<MainWindow*>(pcs->lpCreateParams);
-			
-			//the window must handle dpi awareness in nccreate
-			auto res = main_window->SetDpiAwareness();
+			HMODULE shcore = LoadLibraryW(L"Shcore");
+			if(!shcore)
+				return SupportedVersion::Invalid;
 
-			SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(main_window));
-		
-			return DefWindowProc(hwnd, msg, wparam, lparam);
-		}
+			SetThreadDpiAwarenessContext = reinterpret_cast<decltype(SetThreadDpiAwarenessContext)>(GetProcAddress(shcore, "SetThreadDpiAwarenessContext"));
+			GetThreadDpiAwarenessContext = reinterpret_cast<decltype(GetThreadDpiAwarenessContext)>(GetProcAddress(shcore, "GetThreadDpiAwarenessContext"));
+			GetDpiForWindow = reinterpret_cast<decltype(GetDpiForWindow)>(GetProcAddress(shcore, "GetDpiForWindow"));
+			GetDpiForSystem = reinterpret_cast<decltype(GetDpiForSystem)>(GetProcAddress(shcore, "GetDpiForSystem"));
+			EnableNonClientDpiScaling = reinterpret_cast<decltype(EnableNonClientDpiScaling)>(GetProcAddress(shcore, "EnableNonClientDpiScaling"));
+			GetAwarenessFromDpiAwarenessContext = reinterpret_cast<decltype(GetAwarenessFromDpiAwarenessContext)>(GetProcAddress(shcore, "GetAwarenessFromDpiAwarenessContext"));
 
-		default:
-		{
-			// retrieve class instance to handle messages
-			auto main_window = reinterpret_cast<MainWindow*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-			if (main_window)
-				return main_window->WndInstProc(hwnd, msg, wparam, lparam);
+			SetProcessDpiAwareness = reinterpret_cast<decltype(SetProcessDpiAwareness)>(GetProcAddress(shcore, "SetProcessDpiAwareness"));
+			GetProcessDpiAwareness = reinterpret_cast<decltype(GetProcessDpiAwareness)>(GetProcAddress(shcore, "GetProcessDpiAwareness"));
+			GetDpiForMonitor = reinterpret_cast<decltype(GetDpiForMonitor)>(GetProcAddress(shcore, "GetDpiForMonitor"));
+
+			if (SetThreadDpiAwarenessContext)
+				return SupportedVersion::PerMonitorDpiAwareV2;
+			else if(SetProcessDpiAwareness)
+				return SupportedVersion::PerMonitorDpiAware;
 			else
-				return DefWindowProc(hwnd, msg, wparam, lparam);
-		}
+				return SupportedVersion::DpiUnaware;
 		}
 	}
-
-	//================================================
-	// Set dpi awareness based on flag value
-	//================================================
-	bool MainWindow::SetDpiAwareness()
-	{
-
-
-		if ((wnd_flags_ & KDPIAWARE).none())
-		{
-			auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_UNAWARE);
-			return true;
-		}
-		else
-		{
-			/* DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 is only compatible after Win10 creators update,
-			   try DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE if invalid
-			*/
-			if (auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2))
-			{
-				return true;
-			}
-			else if (auto prev_context = SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE))
-			{
-				EnableNonClientDpiScaling(hwnd_);
-				return true;
-			}
-			else
-			{
-				// pre windows 8, windows must handle dpi scaling
-				SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT_SYSTEM_AWARE);
-				return false;
-			}
-		}
-
-		return false;
-	}
-
 
 }
